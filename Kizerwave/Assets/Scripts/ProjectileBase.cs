@@ -35,6 +35,7 @@ public class ProjectileBase : MonoBehaviour
 
                 transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.down, p_defaultSpeed * Time.deltaTime);
                 p_lifespan -= p_decrease * Time.deltaTime;
+                transform.localEulerAngles = transform.localEulerAngles + new Vector3(0, 1.5f, 0);
             }
             else
             {
