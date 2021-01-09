@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f02f6df3091b04c8f9262eef8267a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnedProjectile: {fileID: -6304539971714801980, guid: 436b23915e140e14694fc21bfbd34b51, type: 3}
+  spawnedProjectile: {fileID: -6012668603451053768, guid: 46653cd25062e554a983bd814016c05a, type: 3}
 --- !u!4 &1235340032
 Transform:
   m_ObjectHideFlags: 0
