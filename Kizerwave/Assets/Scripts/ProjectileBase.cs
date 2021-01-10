@@ -14,6 +14,19 @@ public class ProjectileBase : MonoBehaviour
     public float p_decrease = 1.5f;
     public bool p_active = false;
     public ShipBase p_owner = null;
+    public Vector3 p_initialRotation = Vector3.zero;
+    public Vector3 p_updateRotation = new Vector3(0, 1.5f, 0);
+
+    private void Start()
+    {
+        transform.localEulerAngles = p_initialRotation;
+    }
+
+    private void Awake()
+    {
+        transform.localEulerAngles = p_initialRotation;
+    }
+
     public void Despawn()
     {
         if (myPool != null)
@@ -35,6 +48,7 @@ public class ProjectileBase : MonoBehaviour
 
                 transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.down, p_defaultSpeed * Time.deltaTime);
                 p_lifespan -= p_decrease * Time.deltaTime;
+                transform.localEulerAngles = transform.localEulerAngles + p_updateRotation;
             }
             else
             {
