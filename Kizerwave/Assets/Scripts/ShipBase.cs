@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class ShipBase : MonoBehaviour
 {
+    public enum ShipType
+    {
+        player,
+        enemy
+    }
+
     [SerializeField]
     protected int s_health = 3;
     [SerializeField]
@@ -13,6 +19,10 @@ public class ShipBase : MonoBehaviour
     [SerializeField]
     protected int s_level = 1;
 
+    [SerializeField]
+    protected Vector3 firingDirection = Vector3.down;
+    [SerializeField]
+    protected ShipType type = ShipType.enemy;
     public int HEALTH
     {
         get { return s_health; }
@@ -37,12 +47,29 @@ public class ShipBase : MonoBehaviour
         set { s_level = value; }
     }
 
+    public Vector3 FIRE_DIRECTION
+    {
+        get { return firingDirection; }
+        set { firingDirection = value; }
+    }
+
+    public ShipType SHIPTYPE
+    {
+        get { return type; }
+        set { type = value; }
+    }
+
     public virtual void TakeDamage(int dmgVal)
     {
         HEALTH -= dmgVal;
     }
 
     public virtual void Fire()
+    {
+
+    }
+
+    public virtual void Despawn()
     {
 
     }

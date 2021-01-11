@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3308568}
   - component: {fileID: 2385504}
   - component: {fileID: -6012668603451053768}
+  - component: {fileID: 6393687228889636149}
+  - component: {fileID: -6895851137461464168}
   m_Layer: 0
   m_Name: Missil_05
   m_TagString: Untagged
@@ -105,3 +107,34 @@ MonoBehaviour:
   p_owner: {fileID: 0}
   p_initialRotation: {x: 90, y: 0, z: 0}
   p_updateRotation: {x: 0, y: 0.5, z: 0}
+  moveDirection: {x: 0, y: -1, z: 0}
+--- !u!136 &6393687228889636149
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176162}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2.9889822
+  m_Height: 1.7588911
+  m_Direction: 1
+  m_Center: {x: 0.0008276701, y: 0.29219338, z: -0.18542886}
+--- !u!54 &-6895851137461464168
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176162}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

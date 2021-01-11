@@ -17,6 +17,9 @@ public class EnemyBase : ShipBase
     public bool fireAtWaypoints = false;
     public bool fireAtIntervals = true;
     public float fireIntervals = 5.0f;
+
+    public SquadManager squadManager;
+
     public List<Vector3> WAYPOINTS
     {
         get { return s_waypoints; }
@@ -63,5 +66,10 @@ public class EnemyBase : ShipBase
             ProjectileBase defaultProjectile = somePool.GetProjectile(this);
 
         }
+    }
+
+    public override void Despawn()
+    {
+        base.Despawn();
     }
 }

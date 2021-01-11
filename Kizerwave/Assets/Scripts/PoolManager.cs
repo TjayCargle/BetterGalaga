@@ -27,7 +27,9 @@ public class PoolManager : MonoBehaviour
             returnedProjectile.gameObject.SetActive(true);
             returnedProjectile.transform.position = fireingShip.transform.position;
             returnedProjectile.myPool = this;
+            returnedProjectile.p_owner = fireingShip;
             returnedProjectile.p_currentSpeed = returnedProjectile.p_defaultSpeed + fireingShip.SPEED;
+            returnedProjectile.moveDirection = fireingShip.FIRE_DIRECTION;
             returnedProjectile.p_lifespan = returnedProjectile.p_maxLifespan;
             returnedProjectile.p_active = true;
 

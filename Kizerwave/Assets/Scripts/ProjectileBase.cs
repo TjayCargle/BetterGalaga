@@ -16,6 +16,7 @@ public class ProjectileBase : MonoBehaviour
     public ShipBase p_owner = null;
     public Vector3 p_initialRotation = Vector3.zero;
     public Vector3 p_updateRotation = new Vector3(0, 1.5f, 0);
+    public Vector3 moveDirection = Vector3.down;
 
     private void Start()
     {
@@ -46,11 +47,55 @@ public class ProjectileBase : MonoBehaviour
             {
 
 
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.down, p_defaultSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDirection, p_defaultSpeed * Time.deltaTime);
                 p_lifespan -= p_decrease * Time.deltaTime;
                 transform.localEulerAngles = transform.localEulerAngles + p_updateRotation;
             }
             else
+            {
+                Despawn();
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<ShipBase>())
+        {
+
+            ShipBase someShip = other.gameObject.GetComponent<ShipBase>();
+
+            if (someShip.SHIPTYPE != p_owner.SHIPTYPE)
+            {
+                someShip.HEALTH -= 1;
+                if (someShip.HEALTH <= 0)
+                {
+
+                    if (someShip.SHIPTYPE == ShipBase.ShipType.enemy)
+                    {
+                        EnemyBase anEnemy = someShip.GetComponent<EnemyBase>();
+                        if (anEnemy != null)
+                        {
+
+                            SquadManager sqm = anEnemy.squadManager;
+
+                            if (sqm != null)
+                            {
+
+                                sqm.aliveEnemies.Remove(anEnemy);
+                            }
+                            Destroy(anEnemy.gameObject);
+                        }
+                    }
+                }
+                Despawn();
+            }
+        }
+        else if (other.gameObject.GetComponent<ProjectileBase>())
+        {
+
+            ProjectileBase someProjectile = other.gameObject.GetComponent<ProjectileBase>();
+            if (someProjectile.p_owner != p_owner)
             {
                 Despawn();
             }
