@@ -76,7 +76,9 @@ public class SquadManager : MonoBehaviour
                     bool released = ReleaseNextSquad();
                     if(released == false)
                     {
-                        StopAllCoroutines();
+                        StopAllCoroutines();                 
+                        OptionsPause.LoadMainMenu();
+                    
                     }
                 }
             }

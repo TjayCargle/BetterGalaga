@@ -87,6 +87,10 @@ public class ProjectileBase : MonoBehaviour
                             Destroy(anEnemy.gameObject);
                         }
                     }
+                    else
+                    {
+                        OptionsPause.LoadMainMenu();
+                    }
                 }
                 Despawn();
             }

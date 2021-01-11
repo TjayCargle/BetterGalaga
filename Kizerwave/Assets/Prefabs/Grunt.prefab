@@ -101,6 +101,7 @@ MonoBehaviour:
   s_dmg: 1
   s_level: 1
   firingDirection: {x: 0, y: -1, z: 0}
+  type: 1
   s_waypoints:
   - {x: -19.96, y: 16, z: 40}
   - {x: -21.46, y: 10, z: 40}
@@ -114,12 +115,13 @@ MonoBehaviour:
   - {x: 3.1, y: 16.7, z: 40}
   currentWaypoint: -1
   inFormation: 0
-  StartingPosition: {x: 0, y: 21, z: 40}
+  StartingPosition: {x: 0, y: 30, z: 40}
   StartingRotation: {x: 90, y: 180, z: 0}
   somePool: {fileID: 0}
   fireAtWaypoints: 0
   fireAtIntervals: 1
   fireIntervals: 3
+  squadManager: {fileID: 0}
 --- !u!65 &-8900912188889008664
 BoxCollider:
   m_ObjectHideFlags: 0
