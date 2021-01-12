@@ -50,6 +50,22 @@ public class SquadManager : MonoBehaviour
                 {
                     aNewEnemy.squadManager = this;
                     aliveEnemies.Add(aNewEnemy);
+                    if(i < aSquad.s_formationSpots.Count )
+                    {
+                    aNewEnemy.formationLocation = aSquad.s_formationSpots[i];
+
+                    }
+                    else
+                    {
+                        aNewEnemy.startInFormation = false;
+                        aNewEnemy.endInFormation = false;
+                        aNewEnemy.inFormation = false;
+                    }
+
+                    if(aNewEnemy.startInFormation == true)
+                    {
+                        aNewEnemy.inFormation = true;
+                    }
                 }
                 i++;
             }

@@ -49,3 +49,17 @@ MonoBehaviour:
   - {fileID: 5482453765103044152, guid: c79bc3dc68d53c249bfca64c37f626b9, type: 3}
   - {fileID: 5482453765103044152, guid: c79bc3dc68d53c249bfca64c37f626b9, type: 3}
   - {fileID: 5482453765103044152, guid: c79bc3dc68d53c249bfca64c37f626b9, type: 3}
+  - {fileID: 5482453765103044152, guid: c79bc3dc68d53c249bfca64c37f626b9, type: 3}
+  - {fileID: 5482453765103044152, guid: c79bc3dc68d53c249bfca64c37f626b9, type: 3}
+  - {fileID: 5482453765103044152, guid: c79bc3dc68d53c249bfca64c37f626b9, type: 3}
+  - {fileID: 5482453765103044152, guid: c79bc3dc68d53c249bfca64c37f626b9, type: 3}
+  s_formationSpots:
+  - {x: -20, y: 20, z: 40}
+  - {x: -15, y: 10, z: 40}
+  - {x: -10, y: 0, z: 40}
+  - {x: -5, y: 10, z: 40}
+  - {x: 0, y: 20, z: 40}
+  - {x: 5, y: 10, z: 40}
+  - {x: 10, y: 0, z: 40}
+  - {x: 15, y: 10, z: 40}
+  - {x: 20, y: 20, z: 40}

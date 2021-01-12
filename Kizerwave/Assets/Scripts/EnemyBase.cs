@@ -9,17 +9,18 @@ public class EnemyBase : ShipBase
     [SerializeField]
     protected int currentWaypoint = -1;
     [SerializeField]
-    protected bool inFormation = false;
+    public bool inFormation = false;
     public Vector3 StartingPosition;
     public Vector3 StartingRotation;
     public PoolManager somePool = null;
 
+    public bool startInFormation = false;
+    public bool endInFormation = true;
     public bool fireAtWaypoints = false;
     public bool fireAtIntervals = true;
     public float fireIntervals = 5.0f;
-
     public SquadManager squadManager;
-
+    public Vector3 formationLocation = Vector3.zero;
     public List<Vector3> WAYPOINTS
     {
         get { return s_waypoints; }

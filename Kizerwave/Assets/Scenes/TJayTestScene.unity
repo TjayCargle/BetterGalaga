@@ -1974,7 +1974,7 @@ MonoBehaviour:
   - {fileID: 8382564778400006954, guid: e84e909cde138d3458d87fc33180222a, type: 3}
   aliveEnemies: []
   currentSquad: -1
-  delayTime: 2
+  delayTime: 1
 --- !u!4 &2000333848
 Transform:
   m_ObjectHideFlags: 0
