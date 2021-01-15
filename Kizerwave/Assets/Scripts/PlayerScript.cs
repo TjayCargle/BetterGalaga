@@ -34,52 +34,56 @@ public class PlayerScript : PlayerBase
     // Update is called once per frame
     void Update()
     {
-        //float yStore = moveDirection.y;
-        moveDirection.x = (Input.GetAxis("Horizontal"));
-        moveDirection.y = (Input.GetAxis("Vertical"));
-        moveDirection.z = 0;
-        moveDirection = moveDirection * SPEED;
-
-
-        transform.localEulerAngles = new Vector3(-90, moveDirection.x * -1, transform.localEulerAngles.z);
-
-        //if (characterController.isGrounded)
-        //{
-        //    moveDirection.y = Physics.gravity.y * Time.deltaTime;
-
-        //}
-        //else if (!characterController.isGrounded)
-        //{
-        //    moveDirection.z = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
-        //}
-
-        if (playerIsPlayable)
-        {
-            characterController.Move(moveDirection * Time.deltaTime);
-        }
-
-        if (canFire == false)
+        if (isPaused == false)
         {
 
-            if (firetime > 0)
-            {
-                firetime -= 1 * Time.deltaTime;
-            }
-            if (firetime <= 0)
-            {
-                canFire = true;
-            }
-        }
+            //float yStore = moveDirection.y;
+            moveDirection.x = (Input.GetAxis("Horizontal"));
+            moveDirection.y = (Input.GetAxis("Vertical"));
+            moveDirection.z = 0;
+            moveDirection = moveDirection * SPEED;
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            if (canFire)
-            {
-                Fire();
-                canFire = false;
-                firetime = fireDelay;
-            }
-        }
 
+            transform.localEulerAngles = new Vector3(-90, moveDirection.x * -1, transform.localEulerAngles.z);
+
+            //if (characterController.isGrounded)
+            //{
+            //    moveDirection.y = Physics.gravity.y * Time.deltaTime;
+
+            //}
+            //else if (!characterController.isGrounded)
+            //{
+            //    moveDirection.z = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
+            //}
+
+            if (playerIsPlayable)
+            {
+                characterController.Move(moveDirection * Time.deltaTime);
+            }
+
+            if (canFire == false)
+            {
+
+                if (firetime > 0)
+                {
+                    firetime -= 1 * Time.deltaTime;
+                }
+                if (firetime <= 0)
+                {
+                    canFire = true;
+                }
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if (canFire)
+                {
+                    Fire();
+                    canFire = false;
+                    firetime = fireDelay;
+                }
+            }
+
+        }
     }
 }

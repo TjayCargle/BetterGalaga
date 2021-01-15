@@ -52,7 +52,8 @@ public class PlayerBase : ShipBase
         if (bulletPool != null)
         {
             ProjectileBase defaultProjectile = bulletPool.GetProjectile(this);
-
+            defaultProjectile.p_initialRotation = new Vector3(-90, 0, 0);
+            defaultProjectile.transform.localEulerAngles = new Vector3(-90, defaultProjectile.transform.localEulerAngles.y, defaultProjectile.transform.localEulerAngles.z);
         }
     }
 }

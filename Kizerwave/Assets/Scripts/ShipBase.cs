@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShipBase : MonoBehaviour
 {
+    [SerializeField]
+    protected bool isPaused = false;
     public enum ShipType
     {
         player,
@@ -72,5 +74,15 @@ public class ShipBase : MonoBehaviour
     public virtual void Despawn()
     {
 
+    }
+
+    public virtual void Pause()
+    {
+        isPaused = true;
+    }
+
+    public virtual void Resume()
+    {
+        isPaused = false;
     }
 }

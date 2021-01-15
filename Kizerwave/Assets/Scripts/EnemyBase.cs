@@ -43,20 +43,28 @@ public class EnemyBase : ShipBase
         float timer = fireIntervals;
         while (true)
         {
-            if (fireAtIntervals == false)
+            if (isPaused == false)
             {
-                break;
-            }
 
-            if (timer > 0)
-            {
-                timer -= 1 * Time.deltaTime;
-                yield return null;
+                if (fireAtIntervals == false)
+                {
+                    break;
+                }
+
+                if (timer > 0)
+                {
+                    timer -= 1 * Time.deltaTime;
+                    yield return null;
+                }
+                else
+                {
+                    Fire();
+                    timer = fireIntervals;
+                }
             }
             else
             {
-                Fire();
-                timer = fireIntervals;
+                yield return null;
             }
         }
     }
@@ -65,6 +73,8 @@ public class EnemyBase : ShipBase
         if (somePool != null)
         {
             ProjectileBase defaultProjectile = somePool.GetProjectile(this);
+            defaultProjectile.p_initialRotation = new Vector3(90, 0, 0);
+            defaultProjectile.transform.localEulerAngles = new Vector3(90, defaultProjectile.transform.localEulerAngles.y, defaultProjectile.transform.localEulerAngles.z);
 
         }
     }

@@ -8,7 +8,7 @@ public class SquadManager : MonoBehaviour
     public List<EnemyBase> aliveEnemies = new List<EnemyBase>();
     public int currentSquad = -1;
     public float delayTime = 0.5f;
-
+    public bool isPaused = false;
     private void Start()
     {
         ReleaseNextSquad();
@@ -36,38 +36,46 @@ public class SquadManager : MonoBehaviour
         float timer = delay;
         for (int i = 0; i < aSquad.enemiesInSquad.Count;)
         {
-            if (timer > 0)
+            if (isPaused == false)
             {
-                timer -= 1 * Time.deltaTime;
-                yield return null;
+
+                if (timer > 0)
+                {
+                    timer -= 1 * Time.deltaTime;
+                    yield return null;
+                }
+                else
+                {
+
+                    timer = delay;
+                    EnemyBase aNewEnemy = Instantiate(aSquad.enemiesInSquad[i]);
+                    if (aNewEnemy != null)
+                    {
+                        aNewEnemy.squadManager = this;
+                        aliveEnemies.Add(aNewEnemy);
+                        if (i < aSquad.s_formationSpots.Count)
+                        {
+                            aNewEnemy.formationLocation = aSquad.s_formationSpots[i];
+
+                        }
+                        else
+                        {
+                            aNewEnemy.startInFormation = false;
+                            aNewEnemy.endInFormation = false;
+                            aNewEnemy.inFormation = false;
+                        }
+
+                        if (aNewEnemy.startInFormation == true)
+                        {
+                            aNewEnemy.inFormation = true;
+                        }
+                    }
+                    i++;
+                }
             }
             else
             {
-
-                timer = delay;
-                EnemyBase aNewEnemy = Instantiate(aSquad.enemiesInSquad[i]);
-                if (aNewEnemy != null)
-                {
-                    aNewEnemy.squadManager = this;
-                    aliveEnemies.Add(aNewEnemy);
-                    if(i < aSquad.s_formationSpots.Count )
-                    {
-                    aNewEnemy.formationLocation = aSquad.s_formationSpots[i];
-
-                    }
-                    else
-                    {
-                        aNewEnemy.startInFormation = false;
-                        aNewEnemy.endInFormation = false;
-                        aNewEnemy.inFormation = false;
-                    }
-
-                    if(aNewEnemy.startInFormation == true)
-                    {
-                        aNewEnemy.inFormation = true;
-                    }
-                }
-                i++;
+                yield return null;
             }
         }
     }
@@ -77,32 +85,50 @@ public class SquadManager : MonoBehaviour
         float timer = delay;
         while (true)
         {
-
-            if (timer > 0)
+            if (isPaused == false)
             {
-                timer -= 1 * Time.deltaTime;
-                yield return null;
+
+
+                if (timer > 0)
+                {
+                    timer -= 1 * Time.deltaTime;
+                    yield return null;
+                }
+                else
+                {
+
+                    timer = delay;
+                    if (aliveEnemies.Count == 0)
+                    {
+                        bool released = ReleaseNextSquad();
+                        if (released == false)
+                        {
+                            StopAllCoroutines();
+                            OptionsPause.LoadMainMenu();
+
+                        }
+                    }
+                }
             }
             else
             {
-
-                timer = delay;
-               if(aliveEnemies.Count == 0)
-                {
-                    bool released = ReleaseNextSquad();
-                    if(released == false)
-                    {
-                        StopAllCoroutines();                 
-                        OptionsPause.LoadMainMenu();
-                    
-                    }
-                }
+                yield return null;
             }
         }
     }
 
 
+    public virtual void Pause()
+    {
+        isPaused = true;
+    }
 
+    public virtual void Resume()
+    {
+        isPaused = false;
+    }
+
+  
 
 
 }

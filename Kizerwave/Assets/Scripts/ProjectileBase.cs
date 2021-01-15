@@ -6,6 +6,8 @@ public class ProjectileBase : MonoBehaviour
 {
     public PoolManager myPool = null;
 
+    [SerializeField]
+    protected bool isPaused = false;
     public float p_maxLifespan = 5.0f;
     public float p_lifespan = 5.0f;
     public Vector2 p_direction = Vector2.down;
@@ -41,25 +43,30 @@ public class ProjectileBase : MonoBehaviour
 
     private void Update()
     {
-        if (p_active == true)
+        if (isPaused == false)
         {
-            if (p_lifespan > 0)
+
+            if (p_active == true)
             {
+                if (p_lifespan > 0)
+                {
 
 
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDirection, p_defaultSpeed * Time.deltaTime);
-                p_lifespan -= p_decrease * Time.deltaTime;
-                transform.localEulerAngles = transform.localEulerAngles + p_updateRotation;
-            }
-            else
-            {
-                Despawn();
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDirection, p_defaultSpeed * Time.deltaTime);
+                    p_lifespan -= p_decrease * Time.deltaTime;
+                    transform.localEulerAngles = transform.localEulerAngles + p_updateRotation;
+                }
+                else
+                {
+                    Despawn();
+                }
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.GetComponent<ShipBase>())
         {
 
@@ -104,5 +111,16 @@ public class ProjectileBase : MonoBehaviour
                 Despawn();
             }
         }
+    }
+
+
+    public virtual void Pause()
+    {
+        isPaused = true;
+    }
+
+    public virtual void Resume()
+    {
+        isPaused = false;
     }
 }
