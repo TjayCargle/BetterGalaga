@@ -9,6 +9,8 @@ public class SquadManager : MonoBehaviour
     public int currentSquad = -1;
     public float delayTime = 0.5f;
     public bool isPaused = false;
+    public float initialSpeed = 0;
+    public float speedIncreaseAmount = 1.5f;
     private void Start()
     {
         ReleaseNextSquad();
@@ -50,7 +52,8 @@ public class SquadManager : MonoBehaviour
                     timer = delay;
                     EnemyBase aNewEnemy = Instantiate(aSquad.enemiesInSquad[i]);
 
-                    aNewEnemy.SPEED += currentSquad * 1.5f;
+                    aNewEnemy.SPEED += (currentSquad * speedIncreaseAmount) + initialSpeed;
+
                     if (aNewEnemy != null)
                     {
                         aNewEnemy.squadManager = this;

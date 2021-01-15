@@ -4443,6 +4443,8 @@ MonoBehaviour:
   currentSquad: -1
   delayTime: 1
   isPaused: 0
+  initialSpeed: 0
+  speedIncreaseAmount: 1.5
 --- !u!4 &2000333848
 Transform:
   m_ObjectHideFlags: 0
