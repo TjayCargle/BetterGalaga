@@ -19,8 +19,8 @@ public class PlayerScript : PlayerBase
     public bool playerIsAlive;
     public bool playerIsPlayable;
     private Vector3 moveDirection = Vector3.zero;
-    public float fireDelay = 1.0f;
-    private float firetime;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -78,9 +78,21 @@ public class PlayerScript : PlayerBase
             {
                 if (canFire)
                 {
+                    firetime = fireDelay;
                     Fire();
                     canFire = false;
-                    firetime = fireDelay;
+                }
+            }
+
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                if((int)secondaryWeapon < 5)
+                {
+                    secondaryWeapon++;
+                }
+                else
+                {
+                    secondaryWeapon = TJayEnums.MissileType.normal;
                 }
             }
 

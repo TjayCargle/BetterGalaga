@@ -28,6 +28,7 @@ public class PoolManager : MonoBehaviour
             returnedProjectile.transform.position = fireingShip.transform.position;
             returnedProjectile.myPool = this;
             returnedProjectile.p_owner = fireingShip;
+            returnedProjectile.missleType = TJayEnums.MissileType.normal;
             returnedProjectile.p_currentSpeed = returnedProjectile.p_defaultSpeed + fireingShip.SPEED;
             returnedProjectile.moveDirection = fireingShip.FIRE_DIRECTION;
             returnedProjectile.p_lifespan = returnedProjectile.p_maxLifespan;

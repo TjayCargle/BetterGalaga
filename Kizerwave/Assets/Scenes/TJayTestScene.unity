@@ -4438,6 +4438,7 @@ MonoBehaviour:
   Squads:
   - {fileID: 4773841572379523558, guid: 818c82061f8e87d479413c96cbf46fb8, type: 3}
   - {fileID: 8382564778400006954, guid: e84e909cde138d3458d87fc33180222a, type: 3}
+  - {fileID: 3620554861971804610, guid: f6b54f568d1660b40bd815b8fc017bc2, type: 3}
   aliveEnemies: []
   currentSquad: -1
   delayTime: 1

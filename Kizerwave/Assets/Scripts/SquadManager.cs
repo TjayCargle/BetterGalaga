@@ -49,6 +49,8 @@ public class SquadManager : MonoBehaviour
 
                     timer = delay;
                     EnemyBase aNewEnemy = Instantiate(aSquad.enemiesInSquad[i]);
+
+                    aNewEnemy.SPEED += currentSquad * 1.5f;
                     if (aNewEnemy != null)
                     {
                         aNewEnemy.squadManager = this;
@@ -106,6 +108,23 @@ public class SquadManager : MonoBehaviour
                             StopAllCoroutines();
                             OptionsPause.LoadMainMenu();
 
+                        }
+                    }
+                    else
+                    {
+                        bool allInFormation = true;
+                        for (int i = 0; i < aliveEnemies.Count; i++)
+                        {
+                            if(aliveEnemies[i].inFormation == false)
+                            {
+                                allInFormation = false;
+                                break;
+                            }
+                        }
+
+                        if(allInFormation == true)
+                        {
+                            aliveEnemies[Random.Range(0, aliveEnemies.Count)].inFormation = false;
                         }
                     }
                 }

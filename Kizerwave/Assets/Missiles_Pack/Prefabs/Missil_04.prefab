@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPool: {fileID: 0}
+  isPaused: 0
   p_maxLifespan: 5
   p_lifespan: 5
   p_direction: {x: 0, y: -1}
@@ -106,8 +107,10 @@ MonoBehaviour:
   p_active: 0
   p_owner: {fileID: 0}
   p_initialRotation: {x: 90, y: 0, z: 0}
-  p_updateRotation: {x: 0, y: 0.5, z: 0}
+  p_updateRotation: {x: 0, y: 0, z: 0.5}
   moveDirection: {x: 0, y: -1, z: 0}
+  missleType: 0
+  rotRadius: 10
 --- !u!136 &-591372695096988803
 CapsuleCollider:
   m_ObjectHideFlags: 0

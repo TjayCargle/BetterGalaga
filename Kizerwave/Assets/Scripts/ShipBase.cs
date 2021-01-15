@@ -1,7 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TJayEnums;
+ namespace TJayEnums
+{
+    public enum MissileType
+    {
+        normal,
+        Spread,
+        Cluster,
+        Protective,
+        Homing
 
+    }
+}
 public class ShipBase : MonoBehaviour
 {
     [SerializeField]
@@ -11,7 +23,7 @@ public class ShipBase : MonoBehaviour
         player,
         enemy
     }
-
+   
     [SerializeField]
     protected int s_health = 3;
     [SerializeField]
@@ -25,6 +37,14 @@ public class ShipBase : MonoBehaviour
     protected Vector3 firingDirection = Vector3.down;
     [SerializeField]
     protected ShipType type = ShipType.enemy;
+    protected float firetime;
+    public float fireDelay = 5.0f;
+
+    public int protectiveCount = 0;
+    public int maxProtectiveCount = 10;
+    protected int timesCalled = 0;
+
+
     public int HEALTH
     {
         get { return s_health; }
