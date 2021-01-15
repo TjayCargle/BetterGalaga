@@ -8,7 +8,12 @@ public class OptionsPause : MonoBehaviour
     public AudioSource music;
     public Slider musicSlider;
     public float lastVolume = 0.35f;
+
+    public AudioSource sfx;
+    public Slider sfxSlider;
+    public float lastSFXVolume = 0.35f;
     private static string volumePref = "LAST_VOLUME";
+    private static string sfxPref = "LAST_SFX";
     private void Start()
     {
         if (musicSlider != null)
@@ -20,12 +25,23 @@ public class OptionsPause : MonoBehaviour
             music.volume = lastVolume;
             musicSlider.value = music.volume;
         }
-            SyncOptions();
+
+        if (sfxSlider != null)
+        {
+            if (PlayerPrefs.HasKey(sfxPref))
+            {
+                lastSFXVolume = PlayerPrefs.GetFloat(sfxPref);
+            }
+            sfx.volume = lastSFXVolume;
+            sfxSlider.value = sfx.volume;
+        }
+        SyncOptions();
     }
 
     private void OnDestroy()
     {
         PlayerPrefs.SetFloat(volumePref, lastVolume);
+        PlayerPrefs.SetFloat(sfxPref, lastSFXVolume);
         PlayerPrefs.Save();
     }
     public void LoadPlayScene()
@@ -67,5 +83,19 @@ public class OptionsPause : MonoBehaviour
                 }
             }
         }
+
+        if (sfx != null)
+        {
+            if (sfxSlider != null)
+            {
+                if (sfx.volume != sfxSlider.value)
+                {
+                    sfx.volume = sfxSlider.value;
+                    lastSFXVolume = sfx.volume;
+                }
+            }
+        }
     }
+
+
 }
