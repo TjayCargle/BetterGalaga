@@ -51,7 +51,10 @@ public class ShipBase : MonoBehaviour
         get { return s_health; }
         set { s_health = value; }
     }
-
+    public bool ISPAUSED
+    {
+        get { return isPaused; }
+    }
 
 
     public float SPEED
