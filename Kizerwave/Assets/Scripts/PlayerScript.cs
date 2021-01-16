@@ -8,7 +8,6 @@ public class PlayerScript : PlayerBase
     public GameObject player;
 
 
-
     //Player Movement Verb
     //all inherited
     //[SerializeField] private float moveSpeed;
@@ -86,13 +85,15 @@ public class PlayerScript : PlayerBase
 
             if(Input.GetKeyDown(KeyCode.Q))
             {
-                if((int)secondaryWeapon < 5)
+                if((int)WEAPON < 4)
                 {
-                    secondaryWeapon++;
+                    //temporary code, currently cycles through weapon types
+                    //wil switch to using pickup
+                    WEAPON++;
                 }
                 else
                 {
-                    secondaryWeapon = TJayEnums.MissileType.normal;
+                    WEAPON = TJayEnums.MissileType.normal;
                 }
             }
 

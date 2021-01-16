@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBase : ShipBase
 {
+
     [SerializeField]
     protected List<Vector3> s_waypoints = new List<Vector3>();
     [SerializeField]

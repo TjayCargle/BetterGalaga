@@ -4,31 +4,88 @@ using UnityEngine;
 using TJayEnums;
 public class PlayerBase : ShipBase
 {
-
+    public HUDUpdate playerHUD = null;
     public bool canFire = true;
     public PoolManager bulletPool = null;
     protected MissileType secondaryWeapon = MissileType.normal;
+    protected MissileType normalWeapon = MissileType.normal;
+    protected MissileType currentWeapon = MissileType.normal;
+    protected int bombCount = 3;
+    [SerializeField]
+    protected int s_shield = 3;
+
+    [SerializeField]
+    protected int s_lives = 3;
 
 
+    public override int HEALTH
+    {
+        get { return s_health; }
+        set
+        {
+            if (s_shield > 0)
+            {
+                s_shield--;
+            }
+            else
+            {
+                s_health = value;
+            }
+            UpdateHUD();
+        }
+    }
+
+    public int BOMBS
+    {
+        get { return bombCount; }
+        set { bombCount = value; UpdateHUD(); }
+    }
+    public MissileType WEAPON
+    {
+        get { return currentWeapon; }
+        set { currentWeapon = value; UpdateHUD(); }
+    }
+
+    public MissileType PICKUP
+    {
+        get { return secondaryWeapon; }
+        set { secondaryWeapon = value; UpdateHUD(); }
+    }
+
+    public int SHIELD
+    {
+        get { return s_shield; }
+        set { s_shield = value; UpdateHUD(); }
+    }
+
+    public int LIVES
+    {
+        get { return s_lives; }
+        set { s_lives = value; UpdateHUD(); }
+    }
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
 
-        
+        if(playerHUD == null)
+        {
+            playerHUD = GameObject.FindObjectOfType<HUDUpdate>();
+        }
        
     }
-
-    // Update is called once per frame
-    void Update()
+    private void UpdateHUD()
     {
-
+        if(playerHUD != null)
+        {
+            playerHUD.ValidateChanges();
+        }
     }
-
+  
     public override void Fire()
     {
         if (bulletPool != null)
         {
-            switch (secondaryWeapon)
+            switch (currentWeapon)
             {
                 case MissileType.normal:
                     NormalShot();

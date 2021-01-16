@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TJayEnums;
- namespace TJayEnums
+namespace TJayEnums
 {
     public enum MissileType
     {
@@ -23,15 +23,17 @@ public class ShipBase : MonoBehaviour
         player,
         enemy
     }
-   
+
     [SerializeField]
-    protected int s_health = 3;
+    protected int s_health = 5;
     [SerializeField]
     protected float s_speed = 1;
     [SerializeField]
     protected int s_dmg = 1;
     [SerializeField]
     protected int s_level = 1;
+
+
 
     [SerializeField]
     protected Vector3 firingDirection = Vector3.down;
@@ -44,12 +46,13 @@ public class ShipBase : MonoBehaviour
     public int maxProtectiveCount = 10;
     protected int timesCalled = 0;
 
-
-    public int HEALTH
+    public virtual int HEALTH
     {
         get { return s_health; }
         set { s_health = value; }
     }
+
+
 
     public float SPEED
     {

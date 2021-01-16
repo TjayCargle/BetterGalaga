@@ -127,7 +127,7 @@ public class SquadManager : MonoBehaviour
 
                         if(allInFormation == true)
                         {
-                            aliveEnemies[Random.Range(0, aliveEnemies.Count)].inFormation = false;
+                         //   aliveEnemies[Random.Range(0, aliveEnemies.Count)].inFormation = false;
                         }
                     }
                 }

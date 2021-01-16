@@ -105,6 +105,12 @@ public class GruntScript : EnemyBase
                     transform.position = Vector3.MoveTowards(transform.position, formationLocation, SPEED * Time.deltaTime);
                     //  transform.position = Vector3.Lerp(transform.position, WAYPOINTS[currentWaypoint], SPEED * Time.deltaTime);
                 }
+                else
+                {
+                    transform.localEulerAngles = StartingRotation;
+
+
+                }
 
             }
 
