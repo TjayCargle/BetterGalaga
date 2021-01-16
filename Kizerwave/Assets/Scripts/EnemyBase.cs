@@ -22,6 +22,21 @@ public class EnemyBase : ShipBase
     public float fireIntervals = 5.0f;
     public SquadManager squadManager;
     public Vector3 formationLocation = Vector3.zero;
+
+    [SerializeField]
+    protected EnemyHealthBar myHealthBar = null;
+
+    public override int HEALTH
+    {
+        get { return s_health; }
+        set { s_health = value;
+            if(myHealthBar != null)
+            {
+                myHealthBar.gameObject.SetActive(true);
+                myHealthBar.UpdateHealthBar();
+            }
+        }
+    }
     public List<Vector3> WAYPOINTS
     {
         get { return s_waypoints; }

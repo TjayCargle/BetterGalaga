@@ -4964,6 +4964,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4bb37253356278c41ad3f324c5e3843f, type: 3}
   currentWeaponImg: {fileID: 1887588839}
   playerPickupImg: {fileID: 662994317}
+  healthSliderFill: {fileID: 473834957}
   thePlayer: {fileID: 999955399}
 --- !u!1 &1389952117
 GameObject:
@@ -6954,6 +6955,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 735055212103439074, guid: 8be9e7190b4c1f847bde0f20efeaba64, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1675585501301978436, guid: 8be9e7190b4c1f847bde0f20efeaba64, type: 3}
       propertyPath: m_Name
       value: Spider2
@@ -7147,6 +7152,10 @@ PrefabInstance:
     - target: {fileID: 2897119096442574647, guid: c6c4aff0344631c42a592bf52f64c8ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046326045297819414, guid: c6c4aff0344631c42a592bf52f64c8ce, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6c4aff0344631c42a592bf52f64c8ce, type: 3}

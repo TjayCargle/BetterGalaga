@@ -15,7 +15,7 @@ public class HUDUpdate : MonoBehaviour
 
     public Image currentWeaponImg = null;
     public Image playerPickupImg = null;
-
+    public Image healthSliderFill = null;
     public PlayerScript thePlayer = null;
 
     public void ValidateChanges()
@@ -25,6 +25,10 @@ public class HUDUpdate : MonoBehaviour
             if (playerHealthBar != null)
             {
                 playerHealthBar.value = thePlayer.HEALTH;
+
+                if (healthSliderFill != null)
+                    healthSliderFill.color = Color.Lerp(Color.red, Color.green, playerHealthBar.value / playerHealthBar.maxValue);
+
             }
 
             if (playerShieldBar != null)
@@ -103,7 +107,7 @@ public class HUDUpdate : MonoBehaviour
 
                     if ((int)thePlayer.PICKUP < shotTypes.Count)
                     {
-                        if(thePlayer.PICKUP == TJayEnums.MissileType.normal)
+                        if (thePlayer.PICKUP == TJayEnums.MissileType.normal)
                         {
                             playerPickupImg.sprite = shotTypes[5];
                         }
