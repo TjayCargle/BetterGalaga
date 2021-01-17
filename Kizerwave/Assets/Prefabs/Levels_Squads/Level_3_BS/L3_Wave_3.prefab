@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9017776764578258561}
   - component: {fileID: 4773841572379523558}
   m_Layer: 0
-  m_Name: Wave_3
+  m_Name: L3_Wave_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,52 +44,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInSquad:
-  - {fileID: 5482453765103044152, guid: e6ab8cffd29f7a14f80e4169ae661dab, type: 3}
-  - {fileID: 5482453765103044152, guid: cdf1cff64b155014280f6fdf9c73b1ec, type: 3}
-  - {fileID: 5482453765103044152, guid: 518fd7b0bdcefa84b8a4174df241e940, type: 3}
-  - {fileID: 5482453765103044152, guid: 743ea7882879e9b45adace10099c5c98, type: 3}
-  - {fileID: 5482453765103044152, guid: 969553d8129b61a4b8a969720de64844, type: 3}
-  - {fileID: 5482453765103044152, guid: 39d067bbbde44014eba1d6523189b56f, type: 3}
-  - {fileID: 5482453765103044152, guid: ee2e382ec383d28408bf2e75d4929599, type: 3}
-  - {fileID: 5482453765103044152, guid: 791248655280dca46b115771bedd893e, type: 3}
-  - {fileID: 5482453765103044152, guid: dbf8080682890014f8fa1eef0672f899, type: 3}
-  - {fileID: 5482453765103044152, guid: f4c93e5005360394da3aefa3823a9fc1, type: 3}
-  - {fileID: 5482453765103044152, guid: 1a911d30fb655724f80347723e6ee1e0, type: 3}
-  - {fileID: 5482453765103044152, guid: 1d47beb372160e3418de1a4a9c6a4892, type: 3}
-  - {fileID: 5482453765103044152, guid: 5471f21850994d34e8709efe758f8682, type: 3}
-  - {fileID: 5482453765103044152, guid: af9a37896cb3cd549afe5de69ee4b93b, type: 3}
-  - {fileID: 5482453765103044152, guid: da60627bc502f124995f5378ce2aad37, type: 3}
-  - {fileID: 5482453765103044152, guid: 3424b560574e6e643b934ebf25560a6a, type: 3}
-  - {fileID: 5482453765103044152, guid: 24fc5fb487af6414a8098067e778b2f9, type: 3}
-  - {fileID: 5482453765103044152, guid: fe2082047e5252b4cb2c2b803253be08, type: 3}
-  - {fileID: 5482453765103044152, guid: 5920b12ce51f01346b4a783548cfacca, type: 3}
-  - {fileID: 5482453765103044152, guid: f994091a27dacc5459c27d8eed8c482e, type: 3}
-  - {fileID: 5482453765103044152, guid: 5b56f7c824b37be43b84233d27d9c50f, type: 3}
-  - {fileID: 5482453765103044152, guid: 43ce3a414b2d1064ba9b7c484ee89023, type: 3}
-  - {fileID: 5482453765103044152, guid: d152644e6e3c95845889d5868f67a1c4, type: 3}
-  - {fileID: 5482453765103044152, guid: a5b23f16cff56a043a2518ba193d6693, type: 3}
+  - {fileID: 1982016989002346267, guid: 64a747cae8fa7064d90deb76e0b6a16d, type: 3}
+  - {fileID: 1982016989002346267, guid: ec2e5ae3e6eb1b746bcf9bc36ba53014, type: 3}
+  - {fileID: 1982016989002346267, guid: 4e58dcefe5dd92542aedd360ac155877, type: 3}
+  - {fileID: 1982016989002346267, guid: 68293ba87cbe482489048ffcd9b3eff8, type: 3}
+  - {fileID: 1982016989002346267, guid: d61b2819cfd59434fa613dc65b1a80ff, type: 3}
+  - {fileID: 1982016989002346267, guid: 3eed45059ea3f5b49bce8dec0438e3fe, type: 3}
+  - {fileID: 1982016989002346267, guid: 7b505e62fc141384ebb2215c2a3b222e, type: 3}
+  - {fileID: 1982016989002346267, guid: 98d2ab565515e21438499f5c943d2b84, type: 3}
+  - {fileID: 1982016989002346267, guid: 397f7f9468b9d154d94856f738765693, type: 3}
+  - {fileID: 1982016989002346267, guid: 69a0c321059eb104cac1235ff88651cc, type: 3}
+  - {fileID: 1982016989002346267, guid: c7f6b89f4bb9116499cf35717a13ead1, type: 3}
+  - {fileID: 1982016989002346267, guid: 136dd717215d1e14d9193418d68dc1e7, type: 3}
+  - {fileID: 1982016989002346267, guid: dc56c1ed720bac24e88d232db4fff4ee, type: 3}
+  - {fileID: 1982016989002346267, guid: 4ded6490facbb1d46a4550e70e29a343, type: 3}
+  - {fileID: 1982016989002346267, guid: f99852bf4bef43a45a4169a996c719ee, type: 3}
+  - {fileID: 1982016989002346267, guid: 2749830843f050a49bbeec1d528252ea, type: 3}
+  - {fileID: 1982016989002346267, guid: 744de04289098294ebdcdda85a31d8b6, type: 3}
+  - {fileID: 1982016989002346267, guid: 0b031588e73982e42ace03d0bcbfccaf, type: 3}
+  - {fileID: 1982016989002346267, guid: 0eca0645f2b96354c9b52eb9b30af2e2, type: 3}
+  - {fileID: 1982016989002346267, guid: 86231b2920afbc34991a507032766163, type: 3}
+  - {fileID: 1982016989002346267, guid: a5058bb2c8b94144188af6af4b7fce3b, type: 3}
+  - {fileID: 1982016989002346267, guid: b18efc58cc307374b838818fdb075131, type: 3}
+  - {fileID: 1982016989002346267, guid: 3e386d4090297804dbf16dd50beef953, type: 3}
+  - {fileID: 1982016989002346267, guid: 3ba8b65ba0b9aef428e10609c21419ed, type: 3}
+  - {fileID: 1982016989002346267, guid: 4227fc5989fa0ef4db43b1511992623d, type: 3}
+  - {fileID: 1982016989002346267, guid: 9a514a54cd1dc79448fc1db2d31ac594, type: 3}
+  - {fileID: 1982016989002346267, guid: 99d21eae35893164b8407d5813e2111c, type: 3}
+  - {fileID: 1982016989002346267, guid: 0d8593a39242bec4cb36a20358b72c4d, type: 3}
+  - {fileID: 1982016989002346267, guid: 6df7d6c4aeb3f13488c0c513b1082f0e, type: 3}
+  - {fileID: 1982016989002346267, guid: e4664826ebe5bd84a8a2a9732da32990, type: 3}
+  - {fileID: 1982016989002346267, guid: 06d8f3845e763dc46b7c463ab39f007e, type: 3}
+  - {fileID: 1982016989002346267, guid: 8579e014325267b499f7c64afed5a019, type: 3}
   s_formationSpots:
-  - {x: -20, y: 20, z: 40}
-  - {x: -15, y: 20, z: 40}
-  - {x: -10, y: 20, z: 40}
-  - {x: -5, y: 20, z: 40}
-  - {x: 5, y: 20, z: 40}
-  - {x: 10, y: 20, z: 40}
-  - {x: 15, y: 20, z: 40}
-  - {x: 20, y: 20, z: 40}
-  - {x: -20, y: 10, z: 40}
-  - {x: -15, y: 10, z: 40}
-  - {x: -10, y: 10, z: 40}
-  - {x: -5, y: 10, z: 40}
-  - {x: 5, y: 10, z: 40}
-  - {x: 10, y: 10, z: 40}
-  - {x: 15, y: 10, z: 40}
-  - {x: 20, y: 10, z: 40}
-  - {x: -20, y: 0, z: 40}
-  - {x: -15, y: 0, z: 40}
-  - {x: -10, y: 0, z: 40}
-  - {x: -5, y: 0, z: 40}
-  - {x: 5, y: 0, z: 40}
-  - {x: 10, y: 0, z: 40}
-  - {x: 15, y: 0, z: 40}
-  - {x: 20, y: 0, z: 40}
+  - {x: -20, y: 25, z: 40}
+  - {x: -15, y: 25, z: 40}
+  - {x: -10, y: 25, z: 40}
+  - {x: -5, y: 25, z: 40}
+  - {x: 5, y: 25, z: 40}
+  - {x: 10, y: 25, z: 40}
+  - {x: 15, y: 25, z: 40}
+  - {x: 20, y: 25, z: 40}
+  - {x: -17.5, y: 20, z: 40}
+  - {x: -12.5, y: 20, z: 40}
+  - {x: -7.5, y: 20, z: 40}
+  - {x: -2.5, y: 20, z: 40}
+  - {x: 2.5, y: 20, z: 40}
+  - {x: 7.5, y: 20, z: 40}
+  - {x: 12.5, y: 20, z: 40}
+  - {x: 17.5, y: 20, z: 40}
+  - {x: -20, y: 15, z: 40}
+  - {x: -15, y: 15, z: 40}
+  - {x: -10, y: 15, z: 40}
+  - {x: -5, y: 15, z: 40}
+  - {x: 5, y: 15, z: 40}
+  - {x: 10, y: 15, z: 40}
+  - {x: 15, y: 15, z: 40}
+  - {x: 20, y: 15, z: 40}
+  - {x: -17.5, y: 10, z: 40}
+  - {x: -12.5, y: 10, z: 40}
+  - {x: -7.5, y: 10, z: 40}
+  - {x: -2.5, y: 10, z: 40}
+  - {x: 2.5, y: 10, z: 40}
+  - {x: 7.5, y: 10, z: 40}
+  - {x: 12.5, y: 10, z: 40}
+  - {x: 17.5, y: 10, z: 40}
