@@ -46,7 +46,7 @@ public class OptionsPause : MonoBehaviour
     }
     public void LoadPlayScene()
     {
-        SceneManager.LoadScene("TJayTestScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public static void LoadMainMenu()
