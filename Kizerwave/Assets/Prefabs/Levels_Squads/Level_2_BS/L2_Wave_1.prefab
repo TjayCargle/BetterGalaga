@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &550907887156270852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9017776764578258561}
+  - component: {fileID: 4773841572379523558}
+  m_Layer: 0
+  m_Name: L2_Wave_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9017776764578258561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550907887156270852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.6, y: 11.7, z: 19.823223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4773841572379523558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550907887156270852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aae3917869eddb4095805516fe01aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInSquad:
+  - {fileID: 5482453765103044152, guid: b69d1b4814aba784195a83ab5d003764, type: 3}
+  - {fileID: 5482453765103044152, guid: b69d1b4814aba784195a83ab5d003764, type: 3}
+  - {fileID: 5482453765103044152, guid: b69d1b4814aba784195a83ab5d003764, type: 3}
+  - {fileID: 5482453765103044152, guid: b69d1b4814aba784195a83ab5d003764, type: 3}
+  - {fileID: 5482453765103044152, guid: 99c151cbe7cd93b4fb605bb000537d0b, type: 3}
+  - {fileID: 5482453765103044152, guid: 99c151cbe7cd93b4fb605bb000537d0b, type: 3}
+  - {fileID: 5482453765103044152, guid: 99c151cbe7cd93b4fb605bb000537d0b, type: 3}
+  - {fileID: 5482453765103044152, guid: 99c151cbe7cd93b4fb605bb000537d0b, type: 3}
+  - {fileID: 1982016989002346267, guid: f1d8af5735f3db54bb99688a7a63f4e2, type: 3}
+  - {fileID: 1982016989002346267, guid: f1d8af5735f3db54bb99688a7a63f4e2, type: 3}
+  - {fileID: 1982016989002346267, guid: f1d8af5735f3db54bb99688a7a63f4e2, type: 3}
+  - {fileID: 1982016989002346267, guid: f1d8af5735f3db54bb99688a7a63f4e2, type: 3}
+  - {fileID: 1982016989002346267, guid: 768d21fe767dd394bb4ec2bde5559951, type: 3}
+  - {fileID: 1982016989002346267, guid: 768d21fe767dd394bb4ec2bde5559951, type: 3}
+  - {fileID: 1982016989002346267, guid: 768d21fe767dd394bb4ec2bde5559951, type: 3}
+  - {fileID: 1982016989002346267, guid: 768d21fe767dd394bb4ec2bde5559951, type: 3}
+  s_formationSpots:
+  - {x: -20, y: 20, z: 40}
+  - {x: -15, y: 20, z: 40}
+  - {x: -10, y: 20, z: 40}
+  - {x: -5, y: 20, z: 40}
+  - {x: 5, y: 20, z: 40}
+  - {x: 10, y: 20, z: 40}
+  - {x: 15, y: 20, z: 40}
+  - {x: 20, y: 20, z: 40}
+  - {x: -20, y: 10, z: 40}
+  - {x: -15, y: 10, z: 40}
+  - {x: -10, y: 10, z: 40}
+  - {x: -5, y: 10, z: 40}
+  - {x: 5, y: 10, z: 40}
+  - {x: 10, y: 10, z: 40}
+  - {x: 15, y: 10, z: 40}
+  - {x: 20, y: 10, z: 40}
