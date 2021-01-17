@@ -18,7 +18,7 @@ public class OptionsPause : MonoBehaviour
     {
         if (musicSlider != null)
         {
-            if(PlayerPrefs.HasKey(volumePref))
+            if (PlayerPrefs.HasKey(volumePref))
             {
                 lastVolume = PlayerPrefs.GetFloat(volumePref);
             }
@@ -44,6 +44,12 @@ public class OptionsPause : MonoBehaviour
         PlayerPrefs.SetFloat(sfxPref, lastSFXVolume);
         PlayerPrefs.Save();
     }
+
+    public void LoadScene(string newScene)
+    {
+        SceneManager.LoadScene(newScene);
+    }
+
     public void LoadPlayScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -54,9 +60,47 @@ public class OptionsPause : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public static void LoadNextScene()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        switch(currentScene)
+        {
+            case "Level 1":
+                {
+                    SceneManager.LoadScene("TJayTestScene");
+                }
+                break;
+
+            case "Level 2":
+                {
+                    SceneManager.LoadScene("Level 3");
+                }
+                break;
+
+            case "Level 3":
+                {
+                     SceneManager.LoadScene("MainMenu");
+                }
+                break;
+
+            case "TJayTestScene":
+                {
+                    SceneManager.LoadScene("Level 2");
+                }
+                break;
+            default:
+                {
+                    SceneManager.LoadScene("MainMenu");
+
+                }
+                break;
+        }
+    }
+
     public void OpenPanel(GameObject somePanel)
     {
-        if(somePanel != null)
+        if (somePanel != null)
         {
             somePanel.gameObject.SetActive(true);
         }
@@ -72,11 +116,11 @@ public class OptionsPause : MonoBehaviour
 
     public void SyncOptions()
     {
-        if(music != null)
+        if (music != null)
         {
-            if(musicSlider != null)
+            if (musicSlider != null)
             {
-                if(music.volume != musicSlider.value)
+                if (music.volume != musicSlider.value)
                 {
                     music.volume = musicSlider.value;
                     lastVolume = music.volume;
@@ -92,10 +136,16 @@ public class OptionsPause : MonoBehaviour
                 {
                     sfx.volume = sfxSlider.value;
                     lastSFXVolume = sfx.volume;
+                    if (sfxSlider.gameObject.activeInHierarchy == true)
+                        SFXLibrary.PlayDefaultMissile(true);
                 }
             }
         }
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 
 }

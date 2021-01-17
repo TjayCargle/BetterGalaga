@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInSquad:
-  - {fileID: 1982016989002346267, guid: 8be9e7190b4c1f847bde0f20efeaba64, type: 3}
-  - {fileID: 1982016989002346267, guid: 8be9e7190b4c1f847bde0f20efeaba64, type: 3}
+  - {fileID: 3503913589809903178, guid: 2fe14ff185b945942a1774195a403e58, type: 3}
+  - {fileID: 3503913589809903178, guid: 2fe14ff185b945942a1774195a403e58, type: 3}
   - {fileID: 5482453765103044152, guid: c79bc3dc68d53c249bfca64c37f626b9, type: 3}
   - {fileID: 5482453765103044152, guid: c79bc3dc68d53c249bfca64c37f626b9, type: 3}
   - {fileID: 5482453765103044152, guid: c79bc3dc68d53c249bfca64c37f626b9, type: 3}

@@ -109,7 +109,7 @@ public class SquadManager : MonoBehaviour
                         if (released == false)
                         {
                             StopAllCoroutines();
-                            OptionsPause.LoadMainMenu();
+                            OptionsPause.LoadNextScene();
 
                         }
                     }

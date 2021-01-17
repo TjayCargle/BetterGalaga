@@ -162,6 +162,7 @@ public class ProjectileBase : MonoBehaviour
             defaultProjectile.moveDirection = defaultProjectile.transform.position - transform.position;
 
         }
+        SFXLibrary.PlaySmallExplosion();
     }
 
     private ShipBase GetNearestEnemy()
@@ -203,9 +204,20 @@ public class ProjectileBase : MonoBehaviour
         {
 
             ShipBase someShip = other.gameObject.GetComponent<ShipBase>();
+           
 
             if (someShip.SHIPTYPE != p_owner.SHIPTYPE)
             {
+
+                if (someShip.SHIPTYPE == ShipBase.ShipType.enemy)
+                {
+                    SFXLibrary.PlayEnemyHit();
+                }
+                else
+                {
+                    SFXLibrary.PlayPlayerHit();
+
+                }
                 someShip.HEALTH -= 1;
                 if (someShip.HEALTH <= 0)
                 {
@@ -224,11 +236,14 @@ public class ProjectileBase : MonoBehaviour
                                 sqm.aliveEnemies.Remove(anEnemy);
                             }
                             ScoreScript.playerScore += anEnemy.score;
+                            SFXLibrary.PlayMediumExplosion();
+                            
                             Destroy(anEnemy.gameObject);
                         }
                     }
                     else if (someShip.SHIPTYPE == ShipBase.ShipType.player)
                     {
+
                         PlayerBase thePlayer = someShip.GetComponent<PlayerBase>();
                         if (thePlayer != null)
                         {
