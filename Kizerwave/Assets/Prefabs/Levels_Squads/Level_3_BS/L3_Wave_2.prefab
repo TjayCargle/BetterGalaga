@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9017776764578258561}
   - component: {fileID: 4773841572379523558}
   m_Layer: 0
-  m_Name: Wave_2
+  m_Name: L3_Wave_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,52 +44,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInSquad:
-  - {fileID: 5482453765103044152, guid: 73ab2707723e5414388f2cfa2d8028af, type: 3}
-  - {fileID: 5482453765103044152, guid: ce4c84cdb37d2a34dbba456230b7e51e, type: 3}
-  - {fileID: 5482453765103044152, guid: 4c9cecba45249df4aba3ddae8059dae8, type: 3}
-  - {fileID: 5482453765103044152, guid: 24a143b5907a9654cba4493cbf6f7fa3, type: 3}
-  - {fileID: 5482453765103044152, guid: 26078458c8a100046ae1b74c7ef79939, type: 3}
-  - {fileID: 5482453765103044152, guid: a20cc037906d81b4493bcbc1a39c9008, type: 3}
-  - {fileID: 5482453765103044152, guid: 96c44a343ac4eaf47b27a0e239a225bd, type: 3}
-  - {fileID: 5482453765103044152, guid: add68394bdc86e24ca41e07c85ddaf60, type: 3}
-  - {fileID: 5482453765103044152, guid: dbf8080682890014f8fa1eef0672f899, type: 3}
-  - {fileID: 5482453765103044152, guid: f4c93e5005360394da3aefa3823a9fc1, type: 3}
-  - {fileID: 5482453765103044152, guid: 1a911d30fb655724f80347723e6ee1e0, type: 3}
-  - {fileID: 5482453765103044152, guid: 1d47beb372160e3418de1a4a9c6a4892, type: 3}
-  - {fileID: 5482453765103044152, guid: 5471f21850994d34e8709efe758f8682, type: 3}
-  - {fileID: 5482453765103044152, guid: af9a37896cb3cd549afe5de69ee4b93b, type: 3}
-  - {fileID: 5482453765103044152, guid: da60627bc502f124995f5378ce2aad37, type: 3}
-  - {fileID: 5482453765103044152, guid: 3424b560574e6e643b934ebf25560a6a, type: 3}
-  - {fileID: 5482453765103044152, guid: 24fc5fb487af6414a8098067e778b2f9, type: 3}
-  - {fileID: 5482453765103044152, guid: fe2082047e5252b4cb2c2b803253be08, type: 3}
-  - {fileID: 5482453765103044152, guid: 5920b12ce51f01346b4a783548cfacca, type: 3}
-  - {fileID: 5482453765103044152, guid: f994091a27dacc5459c27d8eed8c482e, type: 3}
-  - {fileID: 5482453765103044152, guid: 5b56f7c824b37be43b84233d27d9c50f, type: 3}
-  - {fileID: 5482453765103044152, guid: 43ce3a414b2d1064ba9b7c484ee89023, type: 3}
-  - {fileID: 5482453765103044152, guid: d152644e6e3c95845889d5868f67a1c4, type: 3}
-  - {fileID: 5482453765103044152, guid: a5b23f16cff56a043a2518ba193d6693, type: 3}
+  - {fileID: 5482453765103044152, guid: e981aaad8e0e5b74dbddd20e4f0c018c, type: 3}
+  - {fileID: 5482453765103044152, guid: ea6753d64362fcb43b2cd15b17c1cc72, type: 3}
+  - {fileID: 5482453765103044152, guid: 1665429d62619d34693fb146d278aa65, type: 3}
+  - {fileID: 5482453765103044152, guid: 886ea7fdc4cc1dc439a0bd120cfad8e4, type: 3}
+  - {fileID: 5482453765103044152, guid: 0c8c9a64c888e264e805ca90a5d62d24, type: 3}
+  - {fileID: 5482453765103044152, guid: 99c25e59703c5564f8975377a9993eab, type: 3}
+  - {fileID: 1982016989002346267, guid: a73fbf34eb126754baa5aaf3241c06ac, type: 3}
+  - {fileID: 1982016989002346267, guid: 9341861953aa47342aef30eab97f0530, type: 3}
+  - {fileID: 1982016989002346267, guid: 2a854f6c22d03754bb5aab7966192890, type: 3}
+  - {fileID: 1982016989002346267, guid: 13af171c0d07dbc458bcd290fdee05e5, type: 3}
+  - {fileID: 1982016989002346267, guid: 6c6ca9d5079ff8f429fd4a8a79915fb7, type: 3}
+  - {fileID: 1982016989002346267, guid: e0c3da42a82ce5b4c997bcc15aa8a0d6, type: 3}
+  - {fileID: 1982016989002346267, guid: 086c6b645a9fa6c46b1c77317e5ce86e, type: 3}
+  - {fileID: 1982016989002346267, guid: 00daeadf89cda1a49969ab4803e246e5, type: 3}
+  - {fileID: 1982016989002346267, guid: e22a165845f9858498710cf3285502cb, type: 3}
+  - {fileID: 1982016989002346267, guid: 1db77781d3460364abd4c4025c2e46ce, type: 3}
+  - {fileID: 1982016989002346267, guid: 3a08b71e1f8372f408642628c339aa42, type: 3}
+  - {fileID: 1982016989002346267, guid: f90035a83c97904428c8604ef4d0e073, type: 3}
+  - {fileID: 1982016989002346267, guid: 336a9be1c4b3d3c47b79e22f7c55f762, type: 3}
+  - {fileID: 1982016989002346267, guid: 730061ec7c278f34593d61742ee04b40, type: 3}
   s_formationSpots:
-  - {x: -20, y: 20, z: 40}
-  - {x: -15, y: 20, z: 40}
-  - {x: -10, y: 20, z: 40}
-  - {x: -5, y: 20, z: 40}
-  - {x: 5, y: 20, z: 40}
-  - {x: 10, y: 20, z: 40}
-  - {x: 15, y: 20, z: 40}
-  - {x: 20, y: 20, z: 40}
   - {x: -20, y: 10, z: 40}
-  - {x: -15, y: 10, z: 40}
   - {x: -10, y: 10, z: 40}
   - {x: -5, y: 10, z: 40}
   - {x: 5, y: 10, z: 40}
   - {x: 10, y: 10, z: 40}
-  - {x: 15, y: 10, z: 40}
   - {x: 20, y: 10, z: 40}
-  - {x: -20, y: 0, z: 40}
-  - {x: -15, y: 0, z: 40}
-  - {x: -10, y: 0, z: 40}
-  - {x: -5, y: 0, z: 40}
-  - {x: 5, y: 0, z: 40}
-  - {x: 10, y: 0, z: 40}
-  - {x: 15, y: 0, z: 40}
-  - {x: 20, y: 0, z: 40}
+  - {x: -20, y: 15, z: 40}
+  - {x: -10, y: 15, z: 40}
+  - {x: -5, y: 15, z: 40}
+  - {x: 5, y: 15, z: 40}
+  - {x: 10, y: 15, z: 40}
+  - {x: 20, y: 15, z: 40}
+  - {x: -5, y: 20, z: 40}
+  - {x: 5, y: 20, z: 40}
+  - {x: -10, y: 20, z: 40}
+  - {x: 10, y: 20, z: 40}
+  - {x: -15, y: 20, z: 40}
+  - {x: 15, y: 20, z: 40}
+  - {x: -20, y: 20, z: 40}
+  - {x: 20, y: 20, z: 40}

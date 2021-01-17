@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: -8900912188889008664}
   - component: {fileID: 4370762239920621097}
   m_Layer: 0
-  m_Name: Grunt
+  m_Name: W1_P6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,19 +318,10 @@ MonoBehaviour:
   protectiveCount: 0
   maxProtectiveCount: 10
   s_waypoints:
-  - {x: -19.96, y: 16, z: 40}
-  - {x: -21.46, y: 10, z: 40}
-  - {x: -18.2, y: 3, z: 40}
-  - {x: -11.1, y: 0.06, z: 40}
-  - {x: 6, y: -0.21, z: 40}
-  - {x: 17.3, y: -0.3, z: 40}
-  - {x: 20.99, y: 2.64, z: 40}
-  - {x: 20.6, y: 7.56, z: 40}
-  - {x: 16.2, y: 13.94, z: 40}
-  - {x: 3.1, y: 16.7, z: 40}
+  - {x: 21, y: 10, z: 40}
   currentWaypoint: -1
   inFormation: 0
-  StartingPosition: {x: 0, y: 30, z: 40}
+  StartingPosition: {x: 60, y: -10, z: 40}
   StartingRotation: {x: 90, y: 180, z: 0}
   somePool: {fileID: 0}
   score: 100
@@ -338,7 +329,7 @@ MonoBehaviour:
   endInFormation: 1
   fireAtWaypoints: 0
   fireAtIntervals: 1
-  fireIntervals: 3
+  fireIntervals: 2
   squadManager: {fileID: 0}
   formationLocation: {x: 0, y: 0, z: 0}
   myHealthBar: {fileID: 717546878066372706}

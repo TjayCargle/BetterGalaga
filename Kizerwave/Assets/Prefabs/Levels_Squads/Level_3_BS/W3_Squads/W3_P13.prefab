@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 1982016989002346269}
   - component: {fileID: 1982016989002346267}
   m_Layer: 0
-  m_Name: Spider2
+  m_Name: W3_P13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -530,26 +530,21 @@ MonoBehaviour:
   protectiveCount: 0
   maxProtectiveCount: 10
   s_waypoints:
-  - {x: -18.7, y: 17, z: 40}
-  - {x: -4.5, y: 13.34, z: 40}
-  - {x: -14.45, y: 0, z: 40}
-  - {x: 2, y: 10, z: 40}
-  - {x: -12, y: 0, z: 40}
-  - {x: 12, y: 10, z: 40}
-  - {x: 24.06, y: 0, z: 40}
-  - {x: 16.6, y: 13.28, z: 40}
-  - {x: 31.4, y: 17, z: 40}
-  - {x: 0, y: 16.7, z: 40}
+  - {x: 12.5, y: -10, z: 40}
+  - {x: 17.5, y: -5, z: 40}
+  - {x: 12.5, y: 0, z: 40}
+  - {x: 17.5, y: 5, z: 40}
+  - {x: 17.5, y: 20, z: 40}
   currentWaypoint: -1
   inFormation: 0
-  StartingPosition: {x: 0, y: 30, z: 40}
+  StartingPosition: {x: 60, y: -20, z: 40}
   StartingRotation: {x: 0, y: 90, z: -90}
   somePool: {fileID: 0}
   score: 200
   startInFormation: 0
   endInFormation: 1
   fireAtWaypoints: 1
-  fireAtIntervals: 0
+  fireAtIntervals: 1
   fireIntervals: 3
   squadManager: {fileID: 0}
   formationLocation: {x: 0, y: 0, z: 0}

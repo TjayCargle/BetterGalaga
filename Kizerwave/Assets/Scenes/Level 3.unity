@@ -6965,11 +6965,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Squads:
-  - {fileID: 4773841572379523558, guid: 818c82061f8e87d479413c96cbf46fb8, type: 3}
-  - {fileID: 8382564778400006954, guid: e84e909cde138d3458d87fc33180222a, type: 3}
-  - {fileID: 3620554861971804610, guid: f6b54f568d1660b40bd815b8fc017bc2, type: 3}
-  - {fileID: 9164368279490499577, guid: c5206f8f17929a54dac92268aa5926b9, type: 3}
-  - {fileID: 948265629166688360, guid: 368a6825afde7184a836b1e77ab33935, type: 3}
+  - {fileID: 4773841572379523558, guid: 8c678572c2b35fe42b82de92b4538095, type: 3}
+  - {fileID: 4773841572379523558, guid: a6b6cd40a01241e4e901a1aae1f63d8f, type: 3}
+  - {fileID: 4773841572379523558, guid: 96e92ed8f0dc9ff41b37eda1f9a33e1a, type: 3}
   aliveEnemies: []
   currentSquad: -1
   delayTime: 1
