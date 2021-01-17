@@ -25,6 +25,7 @@ public class PowerUp : MonoBehaviour
     {
 
         PlayerScript player = theplayer.GetComponent<PlayerScript>();
+
         player.PICKUP = player.WEAPON;
         if (powerUpType == 1)
         {

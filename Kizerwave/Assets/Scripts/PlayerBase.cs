@@ -104,6 +104,9 @@ public class PlayerBase : ShipBase
                 case MissileType.Homing:
              HomingShot();
                     break;
+                case MissileType.Bomb:
+                    Bomb();
+                    break;
              
             }
         }
@@ -186,6 +189,18 @@ public class PlayerBase : ShipBase
         {
             NormalShot();
 
+        }
+    }
+
+    public void Bomb()
+    {
+        if (bombCount > 0)
+        {
+            ProjectileBase defaultProjectile = bulletPool.GetProjectile(this, MissileType.Bomb);
+            defaultProjectile.missleType = TJayEnums.MissileType.Bomb;
+            firetime = fireDelay * 4.5f;
+            defaultProjectile.p_lifespan = defaultProjectile.p_lifespan * 0.5f;
+            BOMBS--;
         }
     }
 }

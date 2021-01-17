@@ -5191,6 +5191,7 @@ MonoBehaviour:
   spawnedProtective: {fileID: 6784474603164871529, guid: 304c0884a0d92f346b8a3f9253122525, type: 3}
   spawnedHoming: {fileID: 5901596287922345889, guid: 8f24d0fbddcf7a34bb8e85b0afd4c3c7, type: 3}
   spawnedSpread: {fileID: 3840332004742062277, guid: 8850a86464b94514db57b4266ebbcceb, type: 3}
+  spawnedBomb: {fileID: 4841839108908030352, guid: 76de854ab22c7154cb074802b2f46da8, type: 3}
 --- !u!4 &1235340032
 Transform:
   m_ObjectHideFlags: 0

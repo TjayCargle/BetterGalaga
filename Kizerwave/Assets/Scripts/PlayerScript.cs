@@ -42,9 +42,19 @@ public class PlayerScript : PlayerBase
             moveDirection.y = (Input.GetAxis("Vertical"));
             moveDirection.z = 0;
             moveDirection = moveDirection * SPEED;
-
-
             transform.localEulerAngles = new Vector3(-90, moveDirection.x * -1, transform.localEulerAngles.z);
+            if (moveDirection.x > 0 && transform.position.x + (moveDirection.x * Time.deltaTime) > 35)
+                moveDirection.x = 0;
+
+            if (moveDirection.x < 0 && transform.position.x + (moveDirection.x * Time.deltaTime) < -35)
+                moveDirection.x = 0;
+
+            if (moveDirection.y > 0 && transform.position.y + (moveDirection.y * Time.deltaTime) > 20)
+                moveDirection.y = 0;
+
+            if (moveDirection.y < 0 && transform.position.y + (moveDirection.y * Time.deltaTime) < -20)
+                moveDirection.y = 0;
+
 
             //if (characterController.isGrounded)
             //{
@@ -58,7 +68,8 @@ public class PlayerScript : PlayerBase
 
             if (playerIsPlayable)
             {
-                characterController.Move(moveDirection * Time.deltaTime);
+                    characterController.Move(moveDirection * Time.deltaTime);
+               
             }
 
             if (canFire == false)
@@ -84,14 +95,19 @@ public class PlayerScript : PlayerBase
                 }
             }
 
-            if(Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 normalWeapon = WEAPON;
                 WEAPON = PICKUP;
                 PICKUP = normalWeapon;
-               
+
             }
 
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Bomb();
+
+            }
         }
     }
 }

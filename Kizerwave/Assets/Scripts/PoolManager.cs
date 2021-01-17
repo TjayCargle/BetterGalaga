@@ -9,6 +9,7 @@ public class PoolManager : MonoBehaviour
     public ProjectileBase spawnedProtective = null;
     public ProjectileBase spawnedHoming = null;
     public ProjectileBase spawnedSpread = null;
+    public ProjectileBase spawnedBomb = null;
     private List<ProjectileBase> inactiveProjectiles = new List<ProjectileBase>();
 
     private ProjectileBase CreateProjectile(ShipBase fireingShip, MissileType missileType)
@@ -48,8 +49,8 @@ public class PoolManager : MonoBehaviour
                 break;
             default:
                 {
-                    returnedProjectile = Instantiate(spawnedProjectile, fireingShip.transform.position, Quaternion.identity);
-                    returnedProjectile.missleType = MissileType.normal;
+                    returnedProjectile = Instantiate(spawnedBomb, fireingShip.transform.position, Quaternion.identity);
+                    returnedProjectile.missleType = MissileType.Bomb;
                 }
                 break;
         }
