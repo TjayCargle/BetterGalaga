@@ -94,7 +94,7 @@ public class EnemyBase : ShipBase
     {
         if (somePool != null)
         {
-            ProjectileBase defaultProjectile = somePool.GetProjectile(this);
+            ProjectileBase defaultProjectile = somePool.GetProjectile(this, TJayEnums.MissileType.normal);
             defaultProjectile.p_initialRotation = new Vector3(90, 0, 0);
             defaultProjectile.transform.localEulerAngles = new Vector3(90, defaultProjectile.transform.localEulerAngles.y, defaultProjectile.transform.localEulerAngles.z);
             SFXLibrary.PlayEnemyFire();

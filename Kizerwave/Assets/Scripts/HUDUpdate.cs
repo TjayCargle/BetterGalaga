@@ -85,7 +85,12 @@ public class HUDUpdate : MonoBehaviour
                 switch (thePlayer.PICKUP)
                 {
                     case TJayEnums.MissileType.normal:
-                        playerPickup.text = "No Pickup";
+                        {
+                            if (thePlayer.PICKUP == TJayEnums.MissileType.normal && thePlayer.WEAPON == TJayEnums.MissileType.normal)
+                                playerPickup.text = "No Pickup";
+                            else
+                                playerPickup.text = "Missile";
+                        }
                         break;
                     case TJayEnums.MissileType.Spread:
                         playerPickup.text = "Spread";
@@ -107,7 +112,7 @@ public class HUDUpdate : MonoBehaviour
 
                     if ((int)thePlayer.PICKUP < shotTypes.Count)
                     {
-                        if (thePlayer.PICKUP == TJayEnums.MissileType.normal)
+                        if (thePlayer.PICKUP == TJayEnums.MissileType.normal && thePlayer.WEAPON == TJayEnums.MissileType.normal)
                         {
                             playerPickupImg.sprite = shotTypes[5];
                         }

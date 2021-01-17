@@ -7,8 +7,10 @@ public class PlayerBase : ShipBase
     public HUDUpdate playerHUD = null;
     public bool canFire = true;
     public PoolManager bulletPool = null;
+    [SerializeField]
     protected MissileType secondaryWeapon = MissileType.normal;
     protected MissileType normalWeapon = MissileType.normal;
+    [SerializeField]
     protected MissileType currentWeapon = MissileType.normal;
     protected int bombCount = 3;
     [SerializeField]
@@ -112,7 +114,7 @@ public class PlayerBase : ShipBase
     {
         if (bulletPool != null)
         {
-            ProjectileBase defaultProjectile = bulletPool.GetProjectile(this);
+            ProjectileBase defaultProjectile = bulletPool.GetProjectile(this, MissileType.normal);
             defaultProjectile.p_initialRotation = new Vector3(-90, 0, 0);
             defaultProjectile.transform.localEulerAngles = new Vector3(-90, defaultProjectile.transform.localEulerAngles.y, defaultProjectile.transform.localEulerAngles.z);
 
@@ -124,8 +126,8 @@ public class PlayerBase : ShipBase
     {
         if (bulletPool != null)
         {
-            ProjectileBase defaultProjectile = bulletPool.GetProjectile(this);
-            defaultProjectile.missleType = TJayEnums.MissileType.Cluster;
+            ProjectileBase defaultProjectile = bulletPool.GetProjectile(this, MissileType.Cluster);
+            //defaultProjectile.missleType = TJayEnums.MissileType.Cluster;
             firetime = fireDelay * 4.5f ;
             defaultProjectile.p_lifespan = defaultProjectile.p_lifespan * 0.5f;
 
@@ -137,17 +139,17 @@ public class PlayerBase : ShipBase
     {
         if (bulletPool != null)
         {
-            ProjectileBase defaultProjectile = bulletPool.GetProjectile(this);
+            ProjectileBase defaultProjectile = bulletPool.GetProjectile(this, MissileType.Spread);
             defaultProjectile.p_initialRotation = new Vector3(-90, 0, 0);
             defaultProjectile.moveDirection = new Vector3(0, 1, 0);
             defaultProjectile.transform.localEulerAngles = new Vector3(-90, defaultProjectile.transform.localEulerAngles.y, defaultProjectile.transform.localEulerAngles.z);
 
-            ProjectileBase secondProjectile = bulletPool.GetProjectile(this);
+            ProjectileBase secondProjectile = bulletPool.GetProjectile(this, MissileType.Spread);
             secondProjectile.p_initialRotation = new Vector3(-45, 45, 0);
             secondProjectile.moveDirection = new Vector3(1, 1, 0);
             secondProjectile.transform.localEulerAngles = new Vector3(-45, 45, defaultProjectile.transform.localEulerAngles.z);
 
-            ProjectileBase thirdProjectile = bulletPool.GetProjectile(this);
+            ProjectileBase thirdProjectile = bulletPool.GetProjectile(this, MissileType.Spread);
             thirdProjectile.p_initialRotation = new Vector3(-45, -45, 0);
             thirdProjectile.moveDirection = new Vector3(-1, 1, 0);
             thirdProjectile.transform.localEulerAngles = new Vector3(-45, -45, defaultProjectile.transform.localEulerAngles.z);
@@ -159,7 +161,7 @@ public class PlayerBase : ShipBase
     {
         if (bulletPool != null)
         {
-            ProjectileBase defaultProjectile = bulletPool.GetProjectile(this);
+            ProjectileBase defaultProjectile = bulletPool.GetProjectile(this, MissileType.Homing);
             defaultProjectile.missleType = TJayEnums.MissileType.Homing;
             SFXLibrary.PlayHomingMissile();
         }
@@ -172,7 +174,7 @@ public class PlayerBase : ShipBase
         {
             if (bulletPool != null)
             {
-                ProjectileBase defaultProjectile = bulletPool.GetProjectile(this);
+                ProjectileBase defaultProjectile = bulletPool.GetProjectile(this, MissileType.Protective);
                 defaultProjectile.missleType = TJayEnums.MissileType.Protective;
                 defaultProjectile.p_lifespan = defaultProjectile.p_maxLifespan * 3;
                 protectiveCount++;

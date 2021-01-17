@@ -86,16 +86,10 @@ public class PlayerScript : PlayerBase
 
             if(Input.GetKeyDown(KeyCode.Q))
             {
-                if((int)WEAPON < 4)
-                {
-                    //temporary code, currently cycles through weapon types
-                    //wil switch to using pickup
-                    WEAPON++;
-                }
-                else
-                {
-                    WEAPON = TJayEnums.MissileType.normal;
-                }
+                normalWeapon = WEAPON;
+                WEAPON = PICKUP;
+                PICKUP = normalWeapon;
+               
             }
 
         }

@@ -151,7 +151,7 @@ public class ProjectileBase : MonoBehaviour
         angle = 360.0f;
         for (int i = 0; i < 10; i++)
         {
-            ProjectileBase defaultProjectile = myPool.GetProjectile(p_owner);
+            ProjectileBase defaultProjectile = myPool.GetProjectile(p_owner, MissileType.normal);
 
             posX = transform.position.x + Mathf.Cos(angle) * 2.0f;
             posY = transform.position.y + Mathf.Sin(angle) * 1.0f;
@@ -236,6 +236,12 @@ public class ProjectileBase : MonoBehaviour
                                 sqm.aliveEnemies.Remove(anEnemy);
                             }
                             ScoreScript.playerScore += anEnemy.score;
+                            float rand = Random.Range(0.0f, 100.0f);
+                            if(rand <= 25.0f)
+                            {
+
+                                PickupContainer.GetPowerUp(Random.Range(0, 5), anEnemy.transform.position);
+                            }
                             SFXLibrary.PlayMediumExplosion();
                             
                             Destroy(anEnemy.gameObject);

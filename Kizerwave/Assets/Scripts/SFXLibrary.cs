@@ -15,7 +15,7 @@ public class SFXLibrary : MonoBehaviour
         realClips.AddRange(audioClips);
         realSFX = sfx;
 
-        Debug.Log(realClips.Count);
+
     }
 
     public static void PlayDefaultMissile(bool wait = false)
