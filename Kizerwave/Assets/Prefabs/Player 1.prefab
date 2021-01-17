@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 4393570229226678896}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -898,20 +898,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7068ddd77ed01644b0004a88acaad5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
   s_health: 3
   s_speed: 1
   s_dmg: 1
   s_level: 1
   firingDirection: {x: 0, y: 1, z: 0}
   type: 0
-  fireRate: 5
+  fireDelay: 1
+  protectiveCount: 0
+  maxProtectiveCount: 10
+  playerHUD: {fileID: 0}
   canFire: 1
   bulletPool: {fileID: 0}
+  s_shield: 3
+  s_lives: 3
   characterController: {fileID: 3789547182898580803}
   player: {fileID: 3789547182898580813}
   playerIsAlive: 0
   playerIsPlayable: 0
-  fireDelay: 1
 --- !u!143 &3789547182898580803
 CharacterController:
   m_ObjectHideFlags: 0
