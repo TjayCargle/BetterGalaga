@@ -282,7 +282,7 @@ public class ProjectileBase : MonoBehaviour
         {
 
             ProjectileBase someProjectile = other.gameObject.GetComponent<ProjectileBase>();
-            if (someProjectile.p_owner != p_owner)
+            if (someProjectile.p_owner.SHIPTYPE != p_owner.SHIPTYPE)
             {
                 Despawn();
             }

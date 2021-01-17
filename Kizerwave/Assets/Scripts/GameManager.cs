@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         ShipBase[] ships = GameObject.FindObjectsOfType<ShipBase>();
         ProjectileBase[] projectiles = GameObject.FindObjectsOfType<ProjectileBase>();
         SquadManager[] squads = GameObject.FindObjectsOfType<SquadManager>();
+        PowerUp[] powers = GameObject.FindObjectsOfType<PowerUp>();
 
         for (int i = 0; i < projectiles.Length; i++)
         {
@@ -31,6 +32,11 @@ public class GameManager : MonoBehaviour
         {
             squads[i].Pause();
         }
+
+        for (int i = 0; i < powers.Length; i++)
+        {
+            powers[i].Pause();
+        }
     }
 
     public void ResumeGame()
@@ -42,6 +48,7 @@ public class GameManager : MonoBehaviour
         ShipBase[] ships = GameObject.FindObjectsOfType<ShipBase>();
         ProjectileBase[] projectiles = GameObject.FindObjectsOfType<ProjectileBase>();
         SquadManager[] squads = GameObject.FindObjectsOfType<SquadManager>();
+        PowerUp[] powers = GameObject.FindObjectsOfType<PowerUp>();
 
         for (int i = 0; i < projectiles.Length; i++)
         {
@@ -56,6 +63,11 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < squads.Length; i++)
         {
             squads[i].Resume();
+        }
+
+        for (int i = 0; i < powers.Length; i++)
+        {
+            powers[i].Resume();
         }
     }
 

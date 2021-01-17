@@ -246,6 +246,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 336563033}
         m_TargetAssemblyTypeName: OptionsPause, Assembly-CSharp
+        m_MethodName: ZeroScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TJayTestScene
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 336563033}
+        m_TargetAssemblyTypeName: OptionsPause, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -2544,6 +2556,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 336563033}
         m_TargetAssemblyTypeName: OptionsPause, Assembly-CSharp
+        m_MethodName: ZeroScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 3
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 336563033}
+        m_TargetAssemblyTypeName: OptionsPause, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -3168,6 +3192,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 336563033}
         m_TargetAssemblyTypeName: OptionsPause, Assembly-CSharp
+        m_MethodName: ZeroScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 2
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 336563033}
+        m_TargetAssemblyTypeName: OptionsPause, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -3739,6 +3775,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 336563033}
+        m_TargetAssemblyTypeName: OptionsPause, Assembly-CSharp
+        m_MethodName: ZeroScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 1
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 336563033}
         m_TargetAssemblyTypeName: OptionsPause, Assembly-CSharp
         m_MethodName: LoadScene
@@ -4687,7 +4735,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1079682224}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 336563033}
+        m_TargetAssemblyTypeName: OptionsPause, Assembly-CSharp
+        m_MethodName: ZeroScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!1 &1099356922
 GameObject:
   m_ObjectHideFlags: 0
@@ -5900,7 +5960,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1456807376}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 336563033}
+        m_TargetAssemblyTypeName: OptionsPause, Assembly-CSharp
+        m_MethodName: ZeroScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!1 &1460914686
 GameObject:
   m_ObjectHideFlags: 0
@@ -6576,7 +6648,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1524898532}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 336563033}
+        m_TargetAssemblyTypeName: OptionsPause, Assembly-CSharp
+        m_MethodName: ZeroScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1525126788
 GameObject:
   m_ObjectHideFlags: 0
@@ -7999,7 +8083,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1783788504}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 336563033}
+        m_TargetAssemblyTypeName: OptionsPause, Assembly-CSharp
+        m_MethodName: ZeroScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!1 &1784431507
 GameObject:
   m_ObjectHideFlags: 0

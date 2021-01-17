@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 1982016989002346269}
   - component: {fileID: 1982016989002346267}
   m_Layer: 0
-  m_Name: W2_P17
+  m_Name: W2_P19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,8 +505,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.2249165, y: 2.2954636, z: 2.6704855}
+  m_Center: {x: 0.6124582, y: -0.14623642, z: 0.01995802}
 --- !u!114 &1982016989002346267
 MonoBehaviour:
   m_ObjectHideFlags: 0

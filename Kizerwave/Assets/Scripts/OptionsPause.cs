@@ -148,4 +148,8 @@ public class OptionsPause : MonoBehaviour
         Application.Quit();
     }
 
+    public void ZeroScore()
+    {
+        ScoreScript.playerScore = 0;
+    }
 }

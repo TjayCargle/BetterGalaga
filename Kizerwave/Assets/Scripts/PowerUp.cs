@@ -11,7 +11,7 @@ public class PowerUp : MonoBehaviour
 
     private void Awake()
     {
-        xDirection = Random.Range(-5, 5);
+        xDirection = Random.Range(-1, 1);
     }
     void OnTriggerEnter(Collider theObject)
     {
@@ -55,7 +55,7 @@ public class PowerUp : MonoBehaviour
         {
             if (p_lifespan > 0)
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(xDirection, 1, 0), 10 * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(xDirection, -1, 0), 10 * Time.deltaTime);
                 transform.localEulerAngles = transform.localEulerAngles + new Vector3(1, 0, 1);
                 p_lifespan -= 1.5f * Time.deltaTime;
             }
@@ -65,5 +65,15 @@ public class PowerUp : MonoBehaviour
 
             }
         }
+    }
+
+    public virtual void Pause()
+    {
+        isPaused = true;
+    }
+
+    public virtual void Resume()
+    {
+        isPaused = false;
     }
 }
