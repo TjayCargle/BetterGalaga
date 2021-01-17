@@ -7097,14 +7097,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Squads:
-  - {fileID: 4773841572379523558, guid: 818c82061f8e87d479413c96cbf46fb8, type: 3}
-  - {fileID: 8382564778400006954, guid: e84e909cde138d3458d87fc33180222a, type: 3}
-  - {fileID: 3620554861971804610, guid: f6b54f568d1660b40bd815b8fc017bc2, type: 3}
-  - {fileID: 9164368279490499577, guid: c5206f8f17929a54dac92268aa5926b9, type: 3}
-  - {fileID: 948265629166688360, guid: 368a6825afde7184a836b1e77ab33935, type: 3}
+  - {fileID: 4773841572379523558, guid: fbc55d3056b05bf4dbac243e82495cd4, type: 3}
+  - {fileID: 4773841572379523558, guid: 90527bcea53590441a9a0084025df006, type: 3}
+  - {fileID: 4773841572379523558, guid: c6d3d0440a9d73b49a2a10f79743b121, type: 3}
   aliveEnemies: []
   currentSquad: -1
-  delayTime: 1
+  delayTime: 1.4
   isPaused: 0
   initialSpeed: 10
   speedIncreaseAmount: 1.5
