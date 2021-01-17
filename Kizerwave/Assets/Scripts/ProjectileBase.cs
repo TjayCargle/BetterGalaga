@@ -225,6 +225,28 @@ public class ProjectileBase : MonoBehaviour
                             Destroy(anEnemy.gameObject);
                         }
                     }
+                    else if (someShip.SHIPTYPE == ShipBase.ShipType.player)
+                    {
+                        PlayerBase thePlayer = someShip.GetComponent<PlayerBase>();
+                        if (thePlayer != null)
+                        {
+                            if(thePlayer.LIVES > 1)
+                            {
+                                thePlayer.LIVES--;
+                                thePlayer.HEALTH = 5;
+                            }
+                            else
+                            {
+                                thePlayer.LIVES--;
+                                GameManager gm = GameObject.FindObjectOfType<GameManager>();
+                                if(gm != null)
+                                {
+                                    gm.GameOver();
+                                }
+                            }
+                            
+                        }
+                    }
                     else
                     {
                         OptionsPause.LoadMainMenu();

@@ -5,10 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject PauseMenu = null;
+    public GameObject GameOverMenu = null;
     private bool paused = false;
     public void PauseGame()
     {
-        if(PauseMenu != null)
+        if (PauseMenu != null)
         {
             OpenPanel(PauseMenu);
         }
@@ -58,9 +59,34 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GameOver()
+    {
+        if (GameOverMenu != null)
+        {
+            PauseGame();
+            ClosePanel(PauseMenu);
+            OpenPanel(GameOverMenu);
+
+        }
+    }
+
+    public void Retry()
+    {
+        //unknown if will be used.
+        //ProjectileBase[] projectiles = GameObject.FindObjectsOfType<ProjectileBase>();
+
+        //SquadManager[] squads = GameObject.FindObjectsOfType<SquadManager>();
+        //for (int i = 0; i < squads.Length; i++)
+        //{
+        //    squads[i].currentSquad = -1;
+        //    squads[i].ReleaseNextSquad();
+
+        //}
+    }
+
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             paused = !paused;
             TogglePause();
@@ -69,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     private void TogglePause()
     {
-        if(paused == true)
+        if (paused == true)
         {
             PauseGame();
         }

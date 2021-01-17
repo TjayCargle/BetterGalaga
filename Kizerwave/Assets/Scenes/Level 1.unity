@@ -1556,6 +1556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 964811305}
+  GameOverMenu: {fileID: 0}
 --- !u!4 &546362625
 Transform:
   m_ObjectHideFlags: 0
@@ -4964,6 +4965,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4bb37253356278c41ad3f324c5e3843f, type: 3}
   currentWeaponImg: {fileID: 1887588839}
   playerPickupImg: {fileID: 662994317}
+  healthSliderFill: {fileID: 0}
   thePlayer: {fileID: 999955399}
 --- !u!1 &1389952117
 GameObject:
@@ -6341,11 +6343,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Squads:
-  - {fileID: 4773841572379523558, guid: 818c82061f8e87d479413c96cbf46fb8, type: 3}
-  - {fileID: 8382564778400006954, guid: e84e909cde138d3458d87fc33180222a, type: 3}
-  - {fileID: 3620554861971804610, guid: f6b54f568d1660b40bd815b8fc017bc2, type: 3}
-  - {fileID: 9164368279490499577, guid: c5206f8f17929a54dac92268aa5926b9, type: 3}
-  - {fileID: 948265629166688360, guid: 368a6825afde7184a836b1e77ab33935, type: 3}
+  - {fileID: 4773841572379523558, guid: e03578a60d686034eace4cc8c50ff263, type: 3}
+  - {fileID: 4773841572379523558, guid: e8854d9d5bbb6294ba3a837c46f9ef01, type: 3}
+  - {fileID: 4773841572379523558, guid: 35253d5f1cc62a942b9d7058ea3fae0a, type: 3}
   aliveEnemies: []
   currentSquad: -1
   delayTime: 1
