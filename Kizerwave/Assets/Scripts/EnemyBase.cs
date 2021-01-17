@@ -54,7 +54,12 @@ public class EnemyBase : ShipBase
         {
             StartCoroutine(DelayedFire());
         }
+
+        
     }
+
+   
+
     IEnumerator DelayedFire()
     {
         float timer = fireIntervals;
@@ -92,7 +97,7 @@ public class EnemyBase : ShipBase
             ProjectileBase defaultProjectile = somePool.GetProjectile(this);
             defaultProjectile.p_initialRotation = new Vector3(90, 0, 0);
             defaultProjectile.transform.localEulerAngles = new Vector3(90, defaultProjectile.transform.localEulerAngles.y, defaultProjectile.transform.localEulerAngles.z);
-
+            SFXLibrary.PlayEnemyFire();
         }
     }
 

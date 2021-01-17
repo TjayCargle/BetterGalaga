@@ -102,6 +102,9 @@ public class PlayerBase : ShipBase
                 case MissileType.Homing:
              HomingShot();
                     break;
+                case MissileType.Bomb:
+                    Bomb();
+                    break;
              
             }
         }
@@ -115,6 +118,8 @@ public class PlayerBase : ShipBase
             ProjectileBase defaultProjectile = bulletPool.GetProjectile(this);
             defaultProjectile.p_initialRotation = new Vector3(-90, 0, 0);
             defaultProjectile.transform.localEulerAngles = new Vector3(-90, defaultProjectile.transform.localEulerAngles.y, defaultProjectile.transform.localEulerAngles.z);
+
+            SFXLibrary.PlayDefaultMissile();
         }
     }
 
@@ -127,6 +132,7 @@ public class PlayerBase : ShipBase
             firetime = fireDelay * 4.5f ;
             defaultProjectile.p_lifespan = defaultProjectile.p_lifespan * 0.5f;
 
+            SFXLibrary.PlayClusterMissile();
         }
     }
 
@@ -148,7 +154,7 @@ public class PlayerBase : ShipBase
             thirdProjectile.p_initialRotation = new Vector3(-45, -45, 0);
             thirdProjectile.moveDirection = new Vector3(-1, 1, 0);
             thirdProjectile.transform.localEulerAngles = new Vector3(-45, -45, defaultProjectile.transform.localEulerAngles.z);
-
+            SFXLibrary.PlaySpreadMissile();
         }
     }
 
@@ -158,6 +164,7 @@ public class PlayerBase : ShipBase
         {
             ProjectileBase defaultProjectile = bulletPool.GetProjectile(this);
             defaultProjectile.missleType = TJayEnums.MissileType.Homing;
+            SFXLibrary.PlayHomingMissile();
         }
     }
 
@@ -173,11 +180,25 @@ public class PlayerBase : ShipBase
                 defaultProjectile.p_lifespan = defaultProjectile.p_maxLifespan * 3;
                 protectiveCount++;
                 timesCalled = 0;
+                SFXLibrary.PlayProtectMissile();
             }
         }
         else
         {
             NormalShot();
+
+        }
+    }
+
+    public void Bomb()
+    {
+        if (bombCount > 0)
+        {
+            ProjectileBase defaultProjectile = bulletPool.GetProjectile(this);
+            defaultProjectile.missleType = TJayEnums.MissileType.Bomb;
+            firetime = fireDelay * 4.5f;
+            defaultProjectile.p_lifespan = defaultProjectile.p_lifespan * 0.5f;
+            bombCount--;
         }
     }
 }

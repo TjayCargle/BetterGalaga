@@ -84,18 +84,13 @@ public class PlayerScript : PlayerBase
                 }
             }
 
-            if(Input.GetKeyDown(KeyCode.Q))
+            if(Input.GetKeyDown(KeyCode.B))
             {
-                if((int)WEAPON < 4)
-                {
-                    //temporary code, currently cycles through weapon types
-                    //wil switch to using pickup
-                    WEAPON++;
-                }
-                else
-                {
-                    WEAPON = TJayEnums.MissileType.normal;
-                }
+                WEAPON = TJayEnums.MissileType.Bomb;
+                Fire();
+                WEAPON = TJayEnums.MissileType.normal;
+
+
             }
 
         }

@@ -13,6 +13,12 @@ public class GruntScript : EnemyBase
         transform.position = StartingPosition;
         transform.localEulerAngles = StartingRotation;
         currentWaypoint = 0;
+
+        if (myHealthBar == null)
+        {
+            myHealthBar = GetComponentInChildren<EnemyHealthBar>(true);
+        }
+
     }
 
     // Update is called once per frame
