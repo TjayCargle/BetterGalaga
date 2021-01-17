@@ -10,7 +10,8 @@ namespace TJayEnums
         Spread,
         Cluster,
         Protective,
-        Homing
+        Homing,
+        Bomb
 
     }
 }
