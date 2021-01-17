@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(EnemyBase), true)]
+[CanEditMultipleObjects]
 public class AIWayPointEditor : Editor
 {
     EnemyBase previewEnemy;

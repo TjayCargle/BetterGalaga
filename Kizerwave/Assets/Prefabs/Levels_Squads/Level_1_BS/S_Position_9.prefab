@@ -206,11 +206,11 @@ MonoBehaviour:
   protectiveCount: 0
   maxProtectiveCount: 10
   s_waypoints:
-  - {x: -40, y: 0, z: 40}
+  - {x: -60, y: 0, z: 40}
   - {x: -20, y: 10, z: 40}
   currentWaypoint: -1
   inFormation: 0
-  StartingPosition: {x: -40, y: 0, z: 40}
+  StartingPosition: {x: -60, y: 0, z: 40}
   StartingRotation: {x: 90, y: 180, z: 0}
   somePool: {fileID: 0}
   startInFormation: 0
@@ -220,6 +220,7 @@ MonoBehaviour:
   fireIntervals: 5
   squadManager: {fileID: 0}
   formationLocation: {x: 0, y: 0, z: 0}
+  myHealthBar: {fileID: 0}
   lockXRotation: 1
   lockYRotation: 0
   lockZRotation: 0
