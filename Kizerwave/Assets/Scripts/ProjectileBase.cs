@@ -6,6 +6,7 @@ public class ProjectileBase : MonoBehaviour
 {
     public PoolManager myPool = null;
 
+
     [SerializeField]
     protected bool isPaused = false;
     public float p_maxLifespan = 5.0f;
@@ -222,6 +223,7 @@ public class ProjectileBase : MonoBehaviour
 
                                 sqm.aliveEnemies.Remove(anEnemy);
                             }
+                            ScoreScript.playerScore += anEnemy.score;
                             Destroy(anEnemy.gameObject);
                         }
                     }

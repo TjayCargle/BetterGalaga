@@ -262,6 +262,7 @@ MonoBehaviour:
   StartingPosition: {x: 0, y: 40, z: 40}
   StartingRotation: {x: 80, y: 180, z: 0}
   somePool: {fileID: 0}
+  score: 1000
   startInFormation: 0
   endInFormation: 1
   fireAtWaypoints: 1

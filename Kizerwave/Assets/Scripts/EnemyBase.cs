@@ -14,6 +14,7 @@ public class EnemyBase : ShipBase
     public Vector3 StartingPosition;
     public Vector3 StartingRotation;
     public PoolManager somePool = null;
+    public int score;
 
     public bool startInFormation = false;
     public bool endInFormation = true;

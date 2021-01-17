@@ -6,7 +6,7 @@ public class PlayerScript : PlayerBase
 {
     public CharacterController characterController;
     public GameObject player;
-
+    public int playerScore;
 
     //Player Movement Verb
     //all inherited
@@ -28,6 +28,7 @@ public class PlayerScript : PlayerBase
         playerIsAlive = true;
         playerIsPlayable = true;
         SPEED = 20;
+        playerScore = 0;
     }
 
     // Update is called once per frame
