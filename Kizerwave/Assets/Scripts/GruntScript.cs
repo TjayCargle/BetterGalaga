@@ -20,13 +20,9 @@ public class GruntScript : EnemyBase
         }
 
     }
-
-    // Update is called once per frame
-    private void Update()
-    {
-
-    }
-
+   public float idleRotRadius = 10.0f;
+   public float idleRotSpeed = 3.5f;
+    float posX, posY, angle = 0.0f;
 
     void FixedUpdate()
     {
@@ -113,7 +109,16 @@ public class GruntScript : EnemyBase
                 }
                 else
                 {
-                    transform.localEulerAngles = StartingRotation;
+                   //StartingRotation;
+                    posX = transform.position.x + Mathf.Cos(angle) * idleRotRadius / 2.0f;
+                    posY = transform.position.y + Mathf.Sin(angle) * idleRotRadius;
+                    //Debug.Log("x= " + );
+                    transform.localEulerAngles  = StartingRotation + new Vector3(posX, posY, transform.position.z);
+                    angle = angle + Time.deltaTime * idleRotSpeed;
+                    if (angle >= 360.0f)
+                    {
+                        angle = 0.0f;
+                    }
 
 
                 }

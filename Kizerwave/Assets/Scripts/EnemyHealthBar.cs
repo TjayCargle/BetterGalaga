@@ -8,6 +8,7 @@ public class EnemyHealthBar : MonoBehaviour
     public EnemyBase targetEnemy = null;
     public float displayTime = 0.5f;
     public Image sliderFill = null;
+    public bool stayOn = false;
     public void UpdateHealthBar()
     {
         if (enemyHealth != null && targetEnemy != null)
@@ -15,7 +16,9 @@ public class EnemyHealthBar : MonoBehaviour
             enemyHealth.value = targetEnemy.HEALTH;
             if (sliderFill != null)
                 sliderFill.color = Color.Lerp(Color.red, Color.green, enemyHealth.value / enemyHealth.maxValue);
-            StartCoroutine(TurnOff(displayTime));
+
+            if (stayOn == false)
+                StartCoroutine(TurnOff(displayTime));
         }
     }
 

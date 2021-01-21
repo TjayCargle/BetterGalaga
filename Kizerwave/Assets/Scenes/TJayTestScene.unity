@@ -1678,7 +1678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8355617, y: 0}
   m_AnchorMax: {x: 1, y: 0.13477921}
-  m_AnchoredPosition: {x: -18.885742, y: 2.5499878}
+  m_AnchoredPosition: {x: -18.885742, y: 2.5499268}
   m_SizeDelta: {x: -1.1729584, y: 5.104744}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &385081115
@@ -8677,7 +8677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Squads:
-  - {fileID: 4773841572379523558, guid: 818c82061f8e87d479413c96cbf46fb8, type: 3}
+  - {fileID: 948265629166688360, guid: 368a6825afde7184a836b1e77ab33935, type: 3}
   - {fileID: 8382564778400006954, guid: e84e909cde138d3458d87fc33180222a, type: 3}
   - {fileID: 3620554861971804610, guid: f6b54f568d1660b40bd815b8fc017bc2, type: 3}
   - {fileID: 9164368279490499577, guid: c5206f8f17929a54dac92268aa5926b9, type: 3}

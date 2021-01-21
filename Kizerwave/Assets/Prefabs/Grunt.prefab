@@ -332,7 +332,7 @@ MonoBehaviour:
   inFormation: 0
   StartingPosition: {x: 0, y: 30, z: 40}
   StartingRotation: {x: 90, y: 180, z: 0}
-  somePool: {fileID: 0}
+  bulletPool: {fileID: 0}
   score: 100
   startInFormation: 0
   endInFormation: 1
@@ -341,6 +341,7 @@ MonoBehaviour:
   fireIntervals: 3
   squadManager: {fileID: 0}
   formationLocation: {x: 0, y: 0, z: 0}
+  shotType: 1
   myHealthBar: {fileID: 717546878066372706}
   lockXRotation: 1
   lockYRotation: 0
