@@ -10,6 +10,7 @@ public class PoolManager : MonoBehaviour
     public ProjectileBase spawnedHoming = null;
     public ProjectileBase spawnedSpread = null;
     public ProjectileBase spawnedBomb = null;
+    public ProjectileBase spawnedLaser = null;
     private List<ProjectileBase> inactiveProjectiles = new List<ProjectileBase>();
 
     private ProjectileBase CreateProjectile(ShipBase fireingShip, MissileType missileType)
@@ -45,6 +46,12 @@ public class PoolManager : MonoBehaviour
                 {
                     returnedProjectile = Instantiate(spawnedHoming, fireingShip.transform.position, Quaternion.identity);
                     returnedProjectile.missleType = MissileType.Homing;
+                }
+                break;
+            case MissileType.Laser:
+                {
+                    returnedProjectile = Instantiate(spawnedLaser, fireingShip.transform.position, Quaternion.identity);
+                    returnedProjectile.missleType = MissileType.Laser;
                 }
                 break;
             default:

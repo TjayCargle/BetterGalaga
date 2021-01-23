@@ -11,7 +11,7 @@ public class PickupContainer : MonoBehaviour
     private void Awake()
     {
         realPowerUps.AddRange(powerUp);
-        Debug.Log(realPowerUps.Count);
+
     }
 
     public static PowerUp GetPowerUp(int type, Vector3 pos)

@@ -11,7 +11,9 @@ namespace TJayEnums
         Cluster,
         Protective,
         Homing,
-        Bomb
+        Bomb,
+        Laser,
+        Random
 
     }
 }
@@ -46,6 +48,9 @@ public class ShipBase : MonoBehaviour
     public int protectiveCount = 0;
     public int maxProtectiveCount = 10;
     protected int timesCalled = 0;
+
+    public MissileType powerupDrop = MissileType.Random;
+    public float dropChance = 25.0f;
 
     public virtual int HEALTH
     {

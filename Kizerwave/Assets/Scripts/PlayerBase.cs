@@ -14,20 +14,22 @@ public class PlayerBase : ShipBase
     protected MissileType currentWeapon = MissileType.normal;
     protected int bombCount = 3;
     [SerializeField]
-    protected int s_shield = 3;
+    protected int s_shield = 5;
 
     [SerializeField]
     protected int s_lives = 3;
 
-
+    public GameObject shieldObject = null;
+    public static bool usingSpecial = false;
+    public static int specialValue = 0;
     public override int HEALTH
     {
         get { return s_health; }
         set
         {
-            if (s_shield > 0)
+            if (SHIELD > 0)
             {
-                s_shield--;
+                SHIELD--;
             }
             else
             {
@@ -57,7 +59,24 @@ public class PlayerBase : ShipBase
     public int SHIELD
     {
         get { return s_shield; }
-        set { s_shield = value; UpdateHUD(); }
+        set
+        {
+            s_shield = value; UpdateHUD();
+            if (shieldObject != null)
+            {
+                if (SHIELD <= 0)
+                {
+                    shieldObject.SetActive(false);
+                }
+                else
+                {
+                    if(shieldObject.activeInHierarchy == false)
+                    {
+                        shieldObject.SetActive(true);
+                    }
+                }
+            }
+        }
     }
 
     public int LIVES
@@ -69,20 +88,20 @@ public class PlayerBase : ShipBase
     void Awake()
     {
 
-        if(playerHUD == null)
+        if (playerHUD == null)
         {
             playerHUD = GameObject.FindObjectOfType<HUDUpdate>();
         }
-       
+
     }
     private void UpdateHUD()
     {
-        if(playerHUD != null)
+        if (playerHUD != null)
         {
             playerHUD.ValidateChanges();
         }
     }
-  
+
     public override void Fire()
     {
         if (bulletPool != null)
@@ -96,22 +115,73 @@ public class PlayerBase : ShipBase
                     SpreadShot();
                     break;
                 case MissileType.Cluster:
-            ClusterShot();
+                    ClusterShot();
                     break;
                 case MissileType.Protective:
-             ProtectiveShot();
+                    ProtectiveShot();
                     break;
                 case MissileType.Homing:
-             HomingShot();
+                    HomingShot();
                     break;
                 case MissileType.Bomb:
                     Bomb();
                     break;
-             
+
             }
         }
     }
 
+    IEnumerator SpeacialShot(float delay, int length)
+    {
+        float timer = delay;
+        int amount = 0;
+        while (true)
+        {
+            if (isPaused == false)
+            {
+
+                usingSpecial = true;
+                if (timer > 0)
+                {
+                    timer -= 1 * Time.deltaTime;
+                    yield return null;
+                }
+                else
+                {
+
+                    timer = delay;
+                 if(amount < length)
+                    {
+                        LaserSpecial(Vector3.up * 8);
+                        amount++;
+                    }
+                 if(amount >= length)
+                    {
+                        usingSpecial = false;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                yield return null;
+            }
+        }
+    }
+
+    public void LaserSpecial()
+    {
+        StartCoroutine(SpeacialShot(0.25f, 16));
+    }
+
+    public void LaserSpecial(Vector3 offsetPos)
+    {
+        ProjectileBase defaultProjectile = bulletPool.GetProjectile(this, MissileType.Laser);
+        defaultProjectile.p_initialRotation = new Vector3(0, 0, 0);
+        defaultProjectile.transform.position += offsetPos;
+        defaultProjectile.transform.localEulerAngles = new Vector3(0, defaultProjectile.transform.localEulerAngles.y, defaultProjectile.transform.localEulerAngles.z);
+
+    }
 
     public void NormalShot()
     {
@@ -131,7 +201,7 @@ public class PlayerBase : ShipBase
         {
             ProjectileBase defaultProjectile = bulletPool.GetProjectile(this, MissileType.Cluster);
             //defaultProjectile.missleType = TJayEnums.MissileType.Cluster;
-            firetime = fireDelay * 4.5f ;
+            firetime = fireDelay * 4.5f;
             defaultProjectile.p_lifespan = defaultProjectile.p_lifespan * 0.5f;
 
             SFXLibrary.PlayClusterMissile();
@@ -173,7 +243,7 @@ public class PlayerBase : ShipBase
     public void ProtectiveShot()
     {
         timesCalled++;
-        if(timesCalled == 3 && protectiveCount < maxProtectiveCount)
+        if (timesCalled == 3 && protectiveCount < maxProtectiveCount)
         {
             if (bulletPool != null)
             {

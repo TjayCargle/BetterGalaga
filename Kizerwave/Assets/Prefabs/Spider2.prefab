@@ -181,6 +181,7 @@ MonoBehaviour:
   targetEnemy: {fileID: 1982016989002346267}
   displayTime: 0.5
   sliderFill: {fileID: 1968949414014260596}
+  stayOn: 0
 --- !u!1 &1156838511063153265
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,8 +506,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2249165, y: 2.2954636, z: 2.6704855}
-  m_Center: {x: 0.6124582, y: -0.14623642, z: 0.01995802}
+  m_Size: {x: 5.768917, y: 3.2685928, z: 2.6704855}
+  m_Center: {x: 0.7462692, y: -0.29730606, z: 0.01995802}
 --- !u!114 &1982016989002346267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,7 +545,7 @@ MonoBehaviour:
   inFormation: 0
   StartingPosition: {x: 0, y: 30, z: 40}
   StartingRotation: {x: 0, y: 90, z: -90}
-  somePool: {fileID: 0}
+  bulletPool: {fileID: 0}
   score: 200
   startInFormation: 0
   endInFormation: 1
@@ -553,10 +554,13 @@ MonoBehaviour:
   fireIntervals: 3
   squadManager: {fileID: 0}
   formationLocation: {x: 0, y: 0, z: 0}
+  shotType: 0
   myHealthBar: {fileID: 5771628649432955216}
   lockXRotation: 1
   lockYRotation: 1
   lockZRotation: 1
+  idleRotRadius: 10
+  idleRotSpeed: 3.5
 --- !u!1 &2889679469706651597
 GameObject:
   m_ObjectHideFlags: 0

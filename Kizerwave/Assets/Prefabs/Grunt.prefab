@@ -317,6 +317,8 @@ MonoBehaviour:
   fireDelay: 5
   protectiveCount: 0
   maxProtectiveCount: 10
+  powerupDrop: 7
+  dropChance: 25
   s_waypoints:
   - {x: -19.96, y: 16, z: 40}
   - {x: -21.46, y: 10, z: 40}
@@ -346,6 +348,8 @@ MonoBehaviour:
   lockXRotation: 1
   lockYRotation: 0
   lockZRotation: 0
+  idleRotRadius: 10
+  idleRotSpeed: 3.5
 --- !u!65 &-8900912188889008664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -631,3 +635,4 @@ MonoBehaviour:
   targetEnemy: {fileID: 5482453765103044152}
   displayTime: 0.5
   sliderFill: {fileID: 1310069699518202799}
+  stayOn: 0

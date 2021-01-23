@@ -126,6 +126,17 @@ public class ProjectileBase : MonoBehaviour
                                 }
                             }
                             break;
+
+                        case MissileType.Laser:
+                            {
+                                
+                                transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDirection, p_defaultSpeed * Time.deltaTime);
+                                if(PlayerBase.usingSpecial == true)
+                                transform.position = new Vector3( p_owner.transform.position.x,transform.position.y, transform.position.z);
+                                p_lifespan -= p_decrease * Time.deltaTime;
+                                transform.localEulerAngles = transform.localEulerAngles + p_updateRotation;
+                            }
+                            break; 
                         default:
                             {
                                 transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDirection, p_defaultSpeed * Time.deltaTime);
@@ -145,6 +156,8 @@ public class ProjectileBase : MonoBehaviour
             }
         }
     }
+
+    
 
     public void SpawnCluster()
     {
@@ -197,6 +210,7 @@ public class ProjectileBase : MonoBehaviour
         return neareast;
 
     }
+    
     private void OnTriggerEnter(Collider other)
     {
 
@@ -236,11 +250,21 @@ public class ProjectileBase : MonoBehaviour
                                 sqm.aliveEnemies.Remove(anEnemy);
                             }
                             ScoreScript.playerScore += anEnemy.score;
+                            if(PlayerBase.usingSpecial == false)
+                            PlayerBase.specialValue += (int)(anEnemy.score * 0.10f);
                             float rand = Random.Range(0.0f, 100.0f);
-                            if(rand <= 25.0f)
+                            if(rand <= someShip.dropChance)
                             {
+                                if(someShip.powerupDrop == MissileType.Random || someShip.powerupDrop > MissileType.Bomb)
+                                {
+                                 PickupContainer.GetPowerUp(Random.Range(0, 6), anEnemy.transform.position);
+                                }
+                                else
+                                {
 
-                                PickupContainer.GetPowerUp(Random.Range(0, 5), anEnemy.transform.position);
+                                PickupContainer.GetPowerUp((int)someShip.powerupDrop, anEnemy.transform.position);
+
+                                }
                             }
                             SFXLibrary.PlayMediumExplosion();
                             
@@ -275,6 +299,7 @@ public class ProjectileBase : MonoBehaviour
                         OptionsPause.LoadMainMenu();
                     }
                 }
+                if(missleType != MissileType.Laser)
                 Despawn();
             }
         }
@@ -284,6 +309,16 @@ public class ProjectileBase : MonoBehaviour
             ProjectileBase someProjectile = other.gameObject.GetComponent<ProjectileBase>();
             if (someProjectile.p_owner.SHIPTYPE != p_owner.SHIPTYPE)
             {
+                Despawn();
+            }
+        }
+
+        else if (other.gameObject.GetComponent<ShieldCollision>())
+        {
+
+            if (p_owner.SHIPTYPE != ShipBase.ShipType.player)
+            {
+                Debug.Log("trig");
                 Despawn();
             }
         }

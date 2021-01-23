@@ -46,6 +46,11 @@ public class PowerUp : MonoBehaviour
             player.WEAPON = TJayEnums.MissileType.Homing;
 
         }
+        else if (powerUpType == 5)
+        {
+            player.SHIELD = 5;
+
+        }
         Destroy(gameObject);
     }
 

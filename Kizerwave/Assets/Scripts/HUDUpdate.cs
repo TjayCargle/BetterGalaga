@@ -17,6 +17,8 @@ public class HUDUpdate : MonoBehaviour
     public Image playerPickupImg = null;
     public Image healthSliderFill = null;
     public PlayerScript thePlayer = null;
+    public Slider specialSlider = null;
+
 
     public void ValidateChanges()
     {
@@ -44,6 +46,8 @@ public class HUDUpdate : MonoBehaviour
             if (playerBombs != null)
             {
                 playerBombs.text = "x" + thePlayer.BOMBS;
+
+
             }
 
             if (playerCurrentWeapon != null)
@@ -123,9 +127,33 @@ public class HUDUpdate : MonoBehaviour
                     }
                 }
 
+                if (specialSlider != null)
+                {
+
+                    StopCoroutine(updateBars());
+                    StartCoroutine(updateBars());
+                }
 
             }
 
         }
+    }
+
+    IEnumerator updateBars()
+    {
+        if (specialSlider != null)
+        {
+            while (Mathf.Abs(PlayerBase.specialValue - specialSlider.value ) > 1)
+            {
+                float newVal = Mathf.Lerp(specialSlider.value, PlayerBase.specialValue, 1 * Time.deltaTime);
+
+                specialSlider.value = newVal;
+
+
+
+                yield return null;
+            }
+        }
+
     }
 }

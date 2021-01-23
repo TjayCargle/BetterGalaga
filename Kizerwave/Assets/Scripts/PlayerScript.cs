@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +7,6 @@ public class PlayerScript : PlayerBase
     public CharacterController characterController;
     public GameObject player;
     public int playerScore;
-
     //Player Movement Verb
     //all inherited
     //[SerializeField] private float moveSpeed;
@@ -19,16 +18,25 @@ public class PlayerScript : PlayerBase
     public bool playerIsPlayable;
     private Vector3 moveDirection = Vector3.zero;
 
-
+    struct Disk
+    {
+        public int centerPoint;
+        public List<int> points;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        characterController.detectCollisions = false;
         playerIsAlive = true;
         playerIsPlayable = true;
         SPEED = 20;
         playerScore = 0;
+
+
+
+
     }
 
     // Update is called once per frame
@@ -36,6 +44,7 @@ public class PlayerScript : PlayerBase
     {
         if (isPaused == false)
         {
+            characterController.detectCollisions = false;
 
             //float yStore = moveDirection.y;
             moveDirection.x = (Input.GetAxis("Horizontal"));
@@ -55,6 +64,10 @@ public class PlayerScript : PlayerBase
             if (moveDirection.y < 0 && transform.position.y + (moveDirection.y * Time.deltaTime) < -20)
                 moveDirection.y = 0;
 
+            if (transform.position.z != 40)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, 40);
+            }
 
             //if (characterController.isGrounded)
             //{
@@ -68,8 +81,10 @@ public class PlayerScript : PlayerBase
 
             if (playerIsPlayable)
             {
+                if (characterController.enabled)
                     characterController.Move(moveDirection * Time.deltaTime);
-               
+                else
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDirection * Time.deltaTime, 0.1f);
             }
 
             if (canFire == false)
@@ -106,6 +121,19 @@ public class PlayerScript : PlayerBase
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Bomb();
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                if (specialValue >= 100)
+                {
+
+                    LaserSpecial();
+                    specialValue = 0;
+                    playerHUD.ValidateChanges();
+
+                }
 
             }
         }
