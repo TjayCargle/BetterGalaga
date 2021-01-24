@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &550907887156270852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9017776764578258561}
+  - component: {fileID: 4773841572379523558}
+  m_Layer: 0
+  m_Name: T_Wave_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9017776764578258561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550907887156270852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.6, y: 11.7, z: 19.823223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4773841572379523558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550907887156270852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aae3917869eddb4095805516fe01aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInSquad:
+  - {fileID: 5482453765103044152, guid: 0c09ec7aca7da9d4ebf1aeb83070061c, type: 3}
+  - {fileID: 5482453765103044152, guid: 7d64f5d4c1983ce49868a8d9ee1388d5, type: 3}
+  - {fileID: 2557889400134798732, guid: b79c9eb29f382dd479beca1a1efec3f4, type: 3}
+  - {fileID: 3503913589809903178, guid: 79f80227159fa174b88e2479cb1c2817, type: 3}
+  - {fileID: 1982016989002346267, guid: b7fb3d67019b36242b876c7c22eebb90, type: 3}
+  - {fileID: 5482453765103044152, guid: 8c71c9f0fc03c1245a352122bb7c7182, type: 3}
+  - {fileID: 5482453765103044152, guid: 4f649eb4d7831d2419fdb5c09487dba2, type: 3}
+  s_formationSpots:
+  - {x: 0, y: 0, z: 40}
+  - {x: 0, y: 0, z: 40}
+  - {x: 0, y: 0, z: 40}
+  - {x: 0, y: 0, z: 40}
+  - {x: 0, y: 0, z: 40}
+  - {x: 0, y: 0, z: 40}
+  - {x: 0, y: 0, z: 40}
