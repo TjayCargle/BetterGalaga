@@ -20,6 +20,7 @@ public class ShieldCollision : MonoBehaviour
         {
             myPlayer = GameObject.FindObjectOfType<PlayerScript>();
         }
+        mat.SetFloat("_HitTime", 0);
 
     }
 

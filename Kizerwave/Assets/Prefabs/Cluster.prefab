@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 8878764710391466422}
   - component: {fileID: 2865045611849931441}
   - component: {fileID: 2396441881442080598}
+  - component: {fileID: 4511415104424536681}
   m_Layer: 0
   m_Name: Cluster
   m_TagString: Untagged
@@ -202,3 +203,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4447341, y: 0.43998814, z: 2.2026958}
   m_Center: {x: -0.02230668, y: 0.52952147, z: 0.15856934}
+--- !u!65 &4511415104424536681
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867402956219656446}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4447341, y: 0.49225426, z: 2.6409788}
+  m_Center: {x: -0.02230668, y: 0.5342922, z: 0.02638197}

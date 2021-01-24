@@ -109,8 +109,12 @@ public class SquadManager : MonoBehaviour
                         if (released == false)
                         {
                             StopAllCoroutines();
-                            OptionsPause.LoadNextScene();
-
+                            // OptionsPause.LoadNextScene();
+                            GameManager gm = GameObject.FindObjectOfType<GameManager>();
+                            if (gm != null)
+                            {
+                                gm.WinLevel();
+                            }
                         }
                     }
                     else

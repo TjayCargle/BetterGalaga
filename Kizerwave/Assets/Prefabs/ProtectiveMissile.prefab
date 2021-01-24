@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6784474603164871529}
   - component: {fileID: -5293594210526851082}
   - component: {fileID: 3262630014407847101}
+  - component: {fileID: -6531912970501836763}
   m_Layer: 0
   m_Name: ProtectiveMissile
   m_TagString: Untagged
@@ -90,6 +91,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.30374336, y: 0.35960913, z: 1.4789362}
   m_Center: {x: 0.10866642, y: 0.11072755, z: -0.2394681}
+--- !u!65 &-6531912970501836763
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5844034938052877672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.42123613, y: 0.35960913, z: 1.6394061}
+  m_Center: {x: 0.09372737, y: 0.11072755, z: -0.23076962}
 --- !u!1 &7345856779307118560
 GameObject:
   m_ObjectHideFlags: 0

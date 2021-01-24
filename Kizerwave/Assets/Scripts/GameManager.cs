@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject PauseMenu = null;
     public GameObject GameOverMenu = null;
+    public GameObject levelCompleteMenu = null;
     private bool paused = false;
     public void PauseGame()
     {
@@ -79,6 +80,16 @@ public class GameManager : MonoBehaviour
             ClosePanel(PauseMenu);
             OpenPanel(GameOverMenu);
 
+        }
+    }
+
+    public void WinLevel()
+    {
+        if(levelCompleteMenu != null)
+        {
+            PauseGame();
+            ClosePanel(PauseMenu);
+            OpenPanel(levelCompleteMenu);
         }
     }
 

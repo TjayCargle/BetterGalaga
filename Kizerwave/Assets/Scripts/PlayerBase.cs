@@ -22,6 +22,10 @@ public class PlayerBase : ShipBase
     public GameObject shieldObject = null;
     public static bool usingSpecial = false;
     public static int specialValue = 0;
+
+    protected int MaxHealth;
+    protected int MaxShield;
+
     public override int HEALTH
     {
         get { return s_health; }
@@ -34,6 +38,8 @@ public class PlayerBase : ShipBase
             else
             {
                 s_health = value;
+                if (s_health > MaxHealth)
+                    s_health = MaxHealth;
             }
             UpdateHUD();
         }
@@ -73,6 +79,8 @@ public class PlayerBase : ShipBase
                     if(shieldObject.activeInHierarchy == false)
                     {
                         shieldObject.SetActive(true);
+                        if (s_shield > MaxShield)
+                            s_shield = MaxShield;
                     }
                 }
             }
@@ -84,16 +92,7 @@ public class PlayerBase : ShipBase
         get { return s_lives; }
         set { s_lives = value; UpdateHUD(); }
     }
-    // Start is called before the first frame update
-    void Awake()
-    {
-
-        if (playerHUD == null)
-        {
-            playerHUD = GameObject.FindObjectOfType<HUDUpdate>();
-        }
-
-    }
+ 
     private void UpdateHUD()
     {
         if (playerHUD != null)

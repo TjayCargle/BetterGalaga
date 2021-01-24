@@ -19,6 +19,31 @@ public class HUDUpdate : MonoBehaviour
     public PlayerScript thePlayer = null;
     public Slider specialSlider = null;
 
+    private void Awake()
+    {
+        StatManager stats = GameObject.FindObjectOfType<StatManager>();
+
+        if (stats != null)
+        {
+            if(playerHealthBar != null)
+            {
+                RectTransform rect = playerHealthBar.GetComponent<RectTransform>();
+                Vector2 updateRect = rect.sizeDelta;
+                updateRect.x = 272 + (100 * stats.healthStat);
+                rect.sizeDelta = updateRect;
+                rect.position = new Vector3((rect.position.x + (100 * (float)stats.healthStat * 0.5f)), rect.position.y, rect.position.z);
+            }
+
+            if (playerShieldBar != null)
+            {
+                RectTransform rect = playerShieldBar.GetComponent<RectTransform>();
+                Vector2 updateRect = rect.sizeDelta;
+                updateRect.x = 222 + (50 * stats.healthStat);
+                rect.sizeDelta = updateRect;
+                rect.position = new Vector3((rect.position.x + (50 * (float)stats.healthStat * 0.5f)), rect.position.y, rect.position.z);
+            }
+        }
+    }
 
     public void ValidateChanges()
     {

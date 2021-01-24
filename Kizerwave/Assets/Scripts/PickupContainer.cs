@@ -16,7 +16,7 @@ public class PickupContainer : MonoBehaviour
 
     public static PowerUp GetPowerUp(int type, Vector3 pos)
     {
-        Debug.Log("Spawning:" + type);
+
 
         PowerUp returnedPowerup = null;
         if (type < realPowerUps.Count)

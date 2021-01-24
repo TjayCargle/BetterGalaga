@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3840332004742062277}
   - component: {fileID: 2495204807666186132}
   - component: {fileID: -8242919260860153981}
+  - component: {fileID: 5368641122002133571}
   m_Layer: 0
   m_Name: SpreadMissile
   m_TagString: Untagged
@@ -72,8 +73,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5482907, y: 0.3071189, z: 2.335023}
-  m_Center: {x: 0.015864134, y: 0.34644055, z: 0.15983438}
+  m_Size: {x: 0.7522969, y: 0.3071189, z: 2.5393257}
+  m_Center: {x: -0.047683954, y: 0.34644055, z: 0.26198578}
 --- !u!54 &-8242919260860153981
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -90,6 +91,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &5368641122002133571
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2312416501051067878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5482907, y: 0.3071189, z: 2.3743563}
+  m_Center: {x: 0.015864134, y: 0.34644055, z: 0.14016771}
 --- !u!1 &5174601501147353847
 GameObject:
   m_ObjectHideFlags: 0

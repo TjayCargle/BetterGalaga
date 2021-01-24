@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0000019073486, y: -56}
+  m_AnchoredPosition: {x: 0.0000019073486, y: -115}
   m_SizeDelta: {x: 107.67044, y: 22.76065}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &956262463331166397
@@ -245,6 +245,8 @@ MonoBehaviour:
   fireDelay: 5
   protectiveCount: 0
   maxProtectiveCount: 10
+  powerupDrop: 7
+  dropChance: 25
   s_waypoints:
   - {x: 0, y: 25, z: 40}
   - {x: 0, y: 10, z: 40}

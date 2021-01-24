@@ -48,7 +48,7 @@ public class PowerUp : MonoBehaviour
         }
         else if (powerUpType == 5)
         {
-            player.SHIELD = 5;
+            player.SHIELD += 3;
 
         }
         Destroy(gameObject);

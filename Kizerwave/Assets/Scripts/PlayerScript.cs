@@ -13,16 +13,12 @@ public class PlayerScript : PlayerBase
     //[SerializeField] private float health;
     //[SerializeField] private float damage;
     //[SerializeField] private float gravityScale;
+ 
 
     public bool playerIsAlive;
     public bool playerIsPlayable;
     private Vector3 moveDirection = Vector3.zero;
 
-    struct Disk
-    {
-        public int centerPoint;
-        public List<int> points;
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -33,11 +29,57 @@ public class PlayerScript : PlayerBase
         playerIsPlayable = true;
         SPEED = 20;
         playerScore = 0;
+    }
 
+    private void Awake()
+    {
 
+        if (playerHUD == null)
+        {
+            playerHUD = GameObject.FindObjectOfType<HUDUpdate>();
+        }
+        StatManager stats = GameObject.FindObjectOfType<StatManager>();
 
+        if(stats != null)
+        {
+            if(stats.selectedMesh != null)
+            {
+            MeshFilter myMesh = gameObject.GetComponentInChildren<MeshFilter>();
+                myMesh.mesh = stats.selectedMesh;
+                myMesh.transform.localScale = new Vector3(stats.meshScale, stats.meshScale, stats.meshScale);
+            }
+
+            if(stats.selectedMaterial != null)
+            {
+                MeshRenderer myMaterial = gameObject.GetComponentInChildren<MeshRenderer>();
+                myMaterial.material = stats.selectedMaterial;
+            }
+
+            fireDelay = 0.6f - ((float)stats.fireRateStat / 10.0f);
+            SPEED = 15 + (5 * stats.speedStat);
+            BoxCollider myCollider = GetComponentInChildren<BoxCollider>();
+           if(myCollider != null)
+            {
+                myCollider.size = new Vector3((1.0f - (0.15f * (float)stats.speedStat)), 1.0f - (0.15f * (float)stats.speedStat), 1.0f - (0.15f * (float)stats.speedStat)); 
+            }
+
+            MaxHealth = 5 * stats.healthStat;
+            MaxShield = 3 * stats.healthStat;
+
+            s_health = MaxHealth;
+            s_shield = MaxShield;
+           if (playerHUD != null)
+            {
+                playerHUD.playerHealthBar.maxValue = MaxHealth;
+                playerHUD.playerHealthBar.value = MaxHealth;
+                playerHUD.playerShieldBar.maxValue = MaxShield;
+                playerHUD.playerShieldBar.value = MaxShield;
+            }
+        
+        }
 
     }
+
 
     // Update is called once per frame
     void Update()
@@ -84,7 +126,7 @@ public class PlayerScript : PlayerBase
                 if (characterController.enabled)
                     characterController.Move(moveDirection * Time.deltaTime);
                 else
-                    transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDirection * Time.deltaTime, 0.1f);
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDirection * Time.deltaTime, SPEED * Time.fixedDeltaTime);
             }
 
             if (canFire == false)

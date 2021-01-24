@@ -417,6 +417,7 @@ GameObject:
   - component: {fileID: 5901596287922345889}
   - component: {fileID: 5855579389016932740}
   - component: {fileID: 8647560386005079012}
+  - component: {fileID: -5107687670176716697}
   m_Layer: 0
   m_Name: Homming
   m_TagString: Untagged
@@ -495,6 +496,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &-5107687670176716697
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4723709138446051754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.28200006, y: 0.40990067, z: 2.2051096}
+  m_Center: {x: 0.03635049, y: 0.027947426, z: -0.23016787}
 --- !u!1 &6770121500973199438
 GameObject:
   m_ObjectHideFlags: 0

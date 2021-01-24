@@ -58,6 +58,8 @@ MonoBehaviour:
   fireDelay: 1
   protectiveCount: 0
   maxProtectiveCount: 10
+  powerupDrop: 7
+  dropChance: 25
   playerHUD: {fileID: 0}
   canFire: 1
   bulletPool: {fileID: 0}
@@ -69,7 +71,6 @@ MonoBehaviour:
   characterController: {fileID: 3789547182898580803}
   player: {fileID: 3789547182898580813}
   playerScore: 0
-  myRigidbody: {fileID: 0}
   playerIsAlive: 0
   playerIsPlayable: 0
 --- !u!143 &3789547182898580803
@@ -81,15 +82,15 @@ CharacterController:
   m_GameObject: {fileID: 3789547182898580813}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Height: 0.5
-  m_Radius: 0.7
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_Height: 0
+  m_Radius: 0
+  m_SlopeLimit: 0
+  m_StepOffset: 0
+  m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4332136557252566537
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -104,7 +105,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!65 &4393570229226678896
 BoxCollider:
@@ -130,7 +131,7 @@ GameObject:
   - component: {fileID: 5246761361181728806}
   - component: {fileID: 722766499945320897}
   - component: {fileID: 8574862872046466107}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: pCube28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
