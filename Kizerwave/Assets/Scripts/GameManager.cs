@@ -91,6 +91,10 @@ public class GameManager : MonoBehaviour
             ClosePanel(PauseMenu);
             OpenPanel(levelCompleteMenu);
         }
+        else
+        {
+            OptionsPause.LoadMainMenu();
+        }
     }
 
     public void Retry()

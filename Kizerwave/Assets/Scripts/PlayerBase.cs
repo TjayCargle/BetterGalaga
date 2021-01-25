@@ -21,10 +21,20 @@ public class PlayerBase : ShipBase
 
     public GameObject shieldObject = null;
     public static bool usingSpecial = false;
-    public static int specialValue = 0;
+    private static int specialValue = 0;
 
-    protected int MaxHealth;
-    protected int MaxShield;
+    public static int SPECIAL
+    {
+        get { return specialValue; }
+        set { specialValue = value;
+            if (specialValue > 100)
+                specialValue = 100;
+            
+        }
+
+    }
+    protected int MaxHealth = 5;
+    protected int MaxShield = 5;
 
     public override int HEALTH
     {

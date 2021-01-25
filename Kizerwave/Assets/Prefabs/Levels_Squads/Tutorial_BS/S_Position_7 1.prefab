@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: -8900912188889008664}
   - component: {fileID: 4370762239920621097}
   m_Layer: 0
-  m_Name: S_Position_7
+  m_Name: S_Position_7 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,6 +419,7 @@ MonoBehaviour:
   squadManager: {fileID: 0}
   formationLocation: {x: 0, y: 0, z: 0}
   shotType: 0
+  specialIncreaseVal: 1
   myHealthBar: {fileID: 0}
   lockXRotation: 1
   lockYRotation: 0

@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9b278b1381f0af046b9dcd1647112ef2
+  - enabled: 1
+    path: Assets/Scenes/TJayTestScene.unity
+    guid: d3d3db171f6ec3e4994941b7437c700c
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 0207d11d93b856b4eab477f8c2772dc5
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 891a5389b0a446849a5435b7e51b48f5
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: e8e45fac1aca3c548b3fea95621aa6f9
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Level.unity
+    guid: 9b81baf090c68744cbd24ffab9c14d9d
   m_configObjects: {}

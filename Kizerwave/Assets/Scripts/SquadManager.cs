@@ -113,7 +113,12 @@ public class SquadManager : MonoBehaviour
                             GameManager gm = GameObject.FindObjectOfType<GameManager>();
                             if (gm != null)
                             {
+
                                 gm.WinLevel();
+                            }
+                            else
+                            {
+                                OptionsPause.LoadMainMenu();
                             }
                         }
                     }

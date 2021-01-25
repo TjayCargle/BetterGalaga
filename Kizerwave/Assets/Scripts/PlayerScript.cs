@@ -27,8 +27,8 @@ public class PlayerScript : PlayerBase
         characterController.detectCollisions = false;
         playerIsAlive = true;
         playerIsPlayable = true;
-        SPEED = 20;
         playerScore = 0;
+        SPECIAL = 0;
     }
 
     private void Awake()
@@ -76,6 +76,11 @@ public class PlayerScript : PlayerBase
                 playerHUD.playerShieldBar.value = MaxShield;
             }
         
+        }
+        else
+        {
+            SPEED = 20;
+
         }
 
     }
@@ -168,11 +173,11 @@ public class PlayerScript : PlayerBase
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                if (specialValue >= 100)
+                if (SPECIAL >= 100)
                 {
 
                     LaserSpecial();
-                    specialValue = 0;
+                    SPECIAL = 0;
                     playerHUD.ValidateChanges();
 
                 }

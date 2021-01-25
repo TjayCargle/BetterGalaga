@@ -32,9 +32,9 @@ public class StatManager : MonoBehaviour
     #endregion
 
 
-    public int healthStat;
-    public int fireRateStat;
-    public int speedStat;
+    public int healthStat =1;
+    public int fireRateStat =1;
+    public int speedStat =1 ;
     public int selectedPlayer = -1;
     public string playerName = "";
     public int meshScale;

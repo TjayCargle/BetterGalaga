@@ -517,6 +517,7 @@ MonoBehaviour:
   squadManager: {fileID: 0}
   formationLocation: {x: 0, y: 0, z: 0}
   shotType: 0
+  specialIncreaseVal: 2
   myHealthBar: {fileID: 0}
   lockXRotation: 1
   lockYRotation: 0

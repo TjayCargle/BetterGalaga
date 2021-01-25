@@ -25,7 +25,7 @@ public class EnemyBase : ShipBase
     public SquadManager squadManager;
     public Vector3 formationLocation = Vector3.zero;
     public MissileType shotType = MissileType.normal;
-   
+    public int specialIncreaseVal = 4;
     [SerializeField]
     protected EnemyHealthBar myHealthBar = null;
 

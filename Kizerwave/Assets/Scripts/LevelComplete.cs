@@ -58,6 +58,13 @@ public class LevelComplete : StatDisplay
         }
         selectedUpgrade = -1;
     }
+
+    public void NextLevel()
+    {
+        PerminateIncrease();
+        OptionsPause.LoadNextScene();
+    }
+
     public void SetUpgrade(int newVal)
     {
         if (selectedUpgrade == newVal)
@@ -99,6 +106,29 @@ public class LevelComplete : StatDisplay
         UpdateBars();
 
     }
+
+    public void PerminateIncrease()
+    {
+        switch (selectedUpgrade)
+        {
+            case 0:
+                manager.IncreaseHealth();
+
+                break;
+
+            case 1:
+                manager.IncreaseFireRate();
+
+                break;
+
+            case 2:
+                tempSpeed++;
+                manager.IncreaseSpeed();
+
+                break;
+        }
+    }
+
     public void UpdateBars()
     {
         // if (selectedUpgrade == -1)

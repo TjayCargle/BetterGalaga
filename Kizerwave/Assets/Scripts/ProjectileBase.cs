@@ -151,6 +151,7 @@ public class ProjectileBase : MonoBehaviour
                 }
                 else
                 {
+
                     Despawn();
                 }
             }
@@ -252,8 +253,11 @@ public class ProjectileBase : MonoBehaviour
                             ScoreScript.playerScore += anEnemy.score;
                             if (missleType != MissileType.Laser)
                             {
-
-                                PlayerBase.specialValue += (int)(anEnemy.score * 0.1f);
+                                PlayerBase.SPECIAL += anEnemy.specialIncreaseVal;
+                                if(p_owner.SHIPTYPE == ShipBase.ShipType.player)
+                                {
+                                    (p_owner as PlayerScript).playerHUD.ValidateChanges();
+                                }
                             }
                             float rand = Random.Range(0.0f, 100.0f);
                             if (rand <= someShip.dropChance)
@@ -310,8 +314,9 @@ public class ProjectileBase : MonoBehaviour
         {
 
             ProjectileBase someProjectile = other.gameObject.GetComponent<ProjectileBase>();
-            if (someProjectile.p_owner.SHIPTYPE != p_owner.SHIPTYPE)
+            if (someProjectile.p_owner.SHIPTYPE != p_owner.SHIPTYPE && missleType != MissileType.Laser)
             {
+
                 Despawn();
             }
         }

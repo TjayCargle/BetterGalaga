@@ -168,9 +168,9 @@ public class HUDUpdate : MonoBehaviour
     {
         if (specialSlider != null)
         {
-            while (Mathf.Abs(PlayerBase.specialValue - specialSlider.value ) > 1)
+            while (Mathf.Abs(PlayerBase.SPECIAL - specialSlider.value ) > 1)
             {
-                float newVal = Mathf.Lerp(specialSlider.value, PlayerBase.specialValue, 1 * Time.deltaTime);
+                float newVal = Mathf.Lerp(specialSlider.value, PlayerBase.SPECIAL, 1 * Time.deltaTime);
 
                 specialSlider.value = newVal;
 

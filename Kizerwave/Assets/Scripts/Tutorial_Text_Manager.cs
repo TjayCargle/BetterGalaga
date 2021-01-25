@@ -55,7 +55,7 @@ public class Tutorial_Text_Manager : MonoBehaviour
     }
     public void uPdateT4()
     {
-        GetComponent<UnityEngine.UI.Text>().text = "The bar at the bottom is you speciel when full unlease a powerful super laser to destroy the enemy";
+        GetComponent<UnityEngine.UI.Text>().text = "The bar at the bottom is you special. Press R when it is full unlease a powerful super laser to destroy the enemy";
     }
 
 }
