@@ -44,6 +44,7 @@ public class StatManager : MonoBehaviour
     public List<Material> playerMaterial = new List<Material>();
     public Material selectedMaterial = null;
     public PlayerSelect playerSelect = null;
+    public List<Sprite> playerImages = new List<Sprite>();
     // Start is called before the first frame update
     void Start()
     {

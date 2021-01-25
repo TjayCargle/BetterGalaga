@@ -2505,6 +2505,7 @@ MonoBehaviour:
   speedImages: []
   startButton: {fileID: 705365044663796304}
   selectedUpgrade: -1
+  playerImage: {fileID: 705365043432342064}
 --- !u!1 &705365044399797176
 GameObject:
   m_ObjectHideFlags: 0

@@ -55,7 +55,7 @@ public class PlayerScript : PlayerBase
                 myMaterial.material = stats.selectedMaterial;
             }
 
-            fireDelay = 0.6f - ((float)stats.fireRateStat / 10.0f);
+            fireDelay = 1.2f - ((float)stats.fireRateStat * 0.2f);
             SPEED = 15 + (5 * stats.speedStat);
             BoxCollider myCollider = GetComponentInChildren<BoxCollider>();
            if(myCollider != null)
@@ -63,7 +63,7 @@ public class PlayerScript : PlayerBase
                 myCollider.size = new Vector3((1.0f - (0.15f * (float)stats.speedStat)), 1.0f - (0.15f * (float)stats.speedStat), 1.0f - (0.15f * (float)stats.speedStat)); 
             }
 
-            MaxHealth = 5 * stats.healthStat;
+            MaxHealth = 5 * stats.healthStat;  
             MaxShield = 3 * stats.healthStat;
 
             s_health = MaxHealth;

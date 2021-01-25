@@ -9,10 +9,19 @@ public class LevelComplete : StatDisplay
     private int tempHealth = 0;
     private int tempFire = 0;
     private int tempSpeed = 0;
+    public Image playerImage = null;
     private void Awake()
     {
         manager = StatManager.Instance;
         UpdateBars();
+        if (playerImage != null)
+        {
+
+            if (manager.playerImages.Count > manager.selectedPlayer - 1)
+            {
+                playerImage.sprite = manager.playerImages[manager.selectedPlayer - 1];
+            }
+        }
     }
 
 
