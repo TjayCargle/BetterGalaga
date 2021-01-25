@@ -5,7 +5,7 @@ using TJayEnums;
 public class ProjectileBase : MonoBehaviour
 {
     public PoolManager myPool = null;
-
+    public GameObject Explosion;
 
     [SerializeField]
     protected bool isPaused = false;
@@ -39,6 +39,10 @@ public class ProjectileBase : MonoBehaviour
         if (missleType == MissileType.Cluster)
         {
             SpawnCluster();
+        }
+        if(missleType == MissileType.Bomb)
+        {
+            BombExplosion();
         }
         if (myPool != null)
         {
@@ -177,6 +181,13 @@ public class ProjectileBase : MonoBehaviour
 
         }
         SFXLibrary.PlaySmallExplosion();
+    }
+
+    public void BombExplosion()
+    {
+        Instantiate(Explosion, transform.position, transform.rotation);
+        SFXLibrary.PlaySmallExplosion();
+
     }
 
     private ShipBase GetNearestEnemy()

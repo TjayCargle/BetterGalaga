@@ -280,6 +280,8 @@ public class PlayerBase : ShipBase
             firetime = fireDelay * 4.5f;
             defaultProjectile.p_lifespan = defaultProjectile.p_lifespan * 0.5f;
             BOMBS--;
+
+            
         }
     }
 }
