@@ -181,6 +181,7 @@ MonoBehaviour:
   targetEnemy: {fileID: 1982016989002346267}
   displayTime: 0.5
   sliderFill: {fileID: 1968949414014260596}
+  stayOn: 0
 --- !u!1 &1156838511063153265
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +530,8 @@ MonoBehaviour:
   fireDelay: 5
   protectiveCount: 0
   maxProtectiveCount: 10
+  powerupDrop: 7
+  dropChance: 25
   s_waypoints:
   - {x: 10, y: -10, z: 40}
   - {x: 5, y: -5, z: 40}
@@ -539,8 +542,8 @@ MonoBehaviour:
   inFormation: 0
   StartingPosition: {x: -60, y: -20, z: 40}
   StartingRotation: {x: 0, y: 90, z: -90}
-  somePool: {fileID: 0}
-  score: 200
+  bulletPool: {fileID: 0}
+  score: 150
   startInFormation: 0
   endInFormation: 1
   fireAtWaypoints: 1
@@ -548,10 +551,13 @@ MonoBehaviour:
   fireIntervals: 3
   squadManager: {fileID: 0}
   formationLocation: {x: 0, y: 0, z: 0}
+  shotType: 0
   myHealthBar: {fileID: 5771628649432955216}
   lockXRotation: 1
   lockYRotation: 1
   lockZRotation: 1
+  idleRotRadius: 10
+  idleRotSpeed: 3.5
 --- !u!1 &2889679469706651597
 GameObject:
   m_ObjectHideFlags: 0

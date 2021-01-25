@@ -51,6 +51,11 @@ public class PowerUp : MonoBehaviour
             player.SHIELD += 3;
 
         }
+        else if (powerUpType == 6)
+        {
+            player.BOMBS++;
+        }
+        player.playerScore += 50;
         Destroy(gameObject);
     }
 
