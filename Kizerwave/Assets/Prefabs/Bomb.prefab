@@ -328,9 +328,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5619039867807351942}
-  - component: {fileID: 3068033202739729355}
   - component: {fileID: 4841839108908030352}
-  - component: {fileID: 6926474006024122154}
+  - component: {fileID: -55502454959432052}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -353,19 +352,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3068033202739729355
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6164178285199228911}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.3151193, y: 3.0798445, z: 3.4108467}
-  m_Center: {x: -0.3035748, y: -1.0399222, z: 0.2719822}
 --- !u!114 &4841839108908030352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,6 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPool: {fileID: 0}
+  Explosion: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
   isPaused: 0
   p_maxLifespan: 5
   p_lifespan: 5
@@ -393,22 +380,19 @@ MonoBehaviour:
   moveDirection: {x: 0, y: -1, z: 0}
   missleType: 5
   rotRadius: 10
---- !u!114 &6926474006024122154
-MonoBehaviour:
+--- !u!135 &-55502454959432052
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6164178285199228911}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fac95f0b2e424214da3c62bae215ed21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerUpType: 6
-  isPaused: 0
-  p_lifespan: 10
-  xDirection: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6855320059703844387
 GameObject:
   m_ObjectHideFlags: 0

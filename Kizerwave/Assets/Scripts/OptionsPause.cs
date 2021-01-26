@@ -80,7 +80,13 @@ public class OptionsPause : MonoBehaviour
 
             case "Level 3":
                 {
-                     SceneManager.LoadScene("MainMenu");
+                     SceneManager.LoadScene("Level 5");
+                }
+                break;
+
+            case "Level 5":
+                {
+                    SceneManager.LoadScene("MainMenu");
                 }
                 break;
 

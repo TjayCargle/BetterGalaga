@@ -47,6 +47,7 @@ public class ShipBase : MonoBehaviour
 
     public int protectiveCount = 0;
     public int maxProtectiveCount = 10;
+    [SerializeField]
     protected int timesCalled = 0;
 
     public MissileType powerupDrop = MissileType.Random;

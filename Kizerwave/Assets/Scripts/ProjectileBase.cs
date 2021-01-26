@@ -40,8 +40,56 @@ public class ProjectileBase : MonoBehaviour
         {
             SpawnCluster();
         }
-        if(missleType == MissileType.Bomb)
+        if (missleType == MissileType.Bomb)
         {
+            EnemyBase[] enemies = GameObject.FindObjectsOfType<EnemyBase>();
+
+            for (int i = enemies.Length - 1; i >= 0; i--)
+            {
+                EnemyBase someEnemy = enemies[i];
+                float sqrDist = (transform.position - someEnemy.transform.position).magnitude;
+
+
+                if (sqrDist < 25)
+                {
+                    someEnemy.HEALTH -= 3;
+
+                    if (someEnemy.HEALTH <= 0)
+                    {
+                        SquadManager sqm = someEnemy.squadManager;
+                        if (sqm != null)
+                        {
+                            sqm.aliveEnemies.Remove(someEnemy);
+                            ScoreScript.playerScore += someEnemy.score;
+
+                            PlayerBase.SPECIAL += someEnemy.specialIncreaseVal;
+                            if (p_owner.SHIPTYPE == ShipBase.ShipType.player)
+                            {
+                                (p_owner as PlayerScript).playerHUD.ValidateChanges();
+                            }
+                        }
+
+                        float rand = Random.Range(0.0f, 100.0f);
+                        if (rand <= someEnemy.dropChance)
+                        {
+                            if (someEnemy.powerupDrop == MissileType.Random || someEnemy.powerupDrop > MissileType.Bomb)
+                            {
+                                PickupContainer.GetPowerUp(Random.Range(0, 7), someEnemy.transform.position);
+                            }
+                            else
+                            {
+
+                                PickupContainer.GetPowerUp((int)someEnemy.powerupDrop, someEnemy.transform.position);
+
+                            }
+                        }
+
+                        Destroy(someEnemy.gameObject);
+                    }
+
+                }
+            }
+
             BombExplosion();
         }
         if (myPool != null)
@@ -80,19 +128,26 @@ public class ProjectileBase : MonoBehaviour
 
                         case MissileType.Protective:
                             {
-
-                                posX = p_owner.transform.position.x + Mathf.Cos(angle) * rotRadius / 2.0f;
-                                posY = p_owner.transform.position.y + Mathf.Sin(angle) * rotRadius;
-                                //Debug.Log("x= " + );
-                                transform.position = new Vector3(posX, posY, transform.position.z);
-                                angle = angle + Time.deltaTime * rotSpeed;
-                                if (angle >= 360.0f)
+                                if (p_owner)
                                 {
-                                    angle = 0.0f;
-                                }
+                                    posX = p_owner.transform.position.x + Mathf.Cos(angle) * rotRadius / 2.0f;
+                                    posY = p_owner.transform.position.y + Mathf.Sin(angle) * rotRadius;
 
-                                transform.LookAt(p_owner.transform);
-                                transform.localEulerAngles = new Vector3(-transform.localEulerAngles.x, -transform.localEulerAngles.y, transform.localEulerAngles.z);
+                                    //Debug.Log("x= " + );
+                                    transform.position = new Vector3(posX, posY, transform.position.z);
+                                    angle = angle + Time.deltaTime * rotSpeed;
+                                    if (angle >= 360.0f)
+                                    {
+                                        angle = 0.0f;
+                                    }
+
+                                    transform.LookAt(p_owner.transform);
+                                    transform.localEulerAngles = new Vector3(-transform.localEulerAngles.x, -transform.localEulerAngles.y, transform.localEulerAngles.z);
+                                }
+                                else
+                                {
+                                    Despawn();
+                                }
 
                                 p_lifespan -= p_decrease * Time.deltaTime;
                             }
@@ -265,7 +320,7 @@ public class ProjectileBase : MonoBehaviour
                             if (missleType != MissileType.Laser)
                             {
                                 PlayerBase.SPECIAL += anEnemy.specialIncreaseVal;
-                                if(p_owner.SHIPTYPE == ShipBase.ShipType.player)
+                                if (p_owner.SHIPTYPE == ShipBase.ShipType.player)
                                 {
                                     (p_owner as PlayerScript).playerHUD.ValidateChanges();
                                 }

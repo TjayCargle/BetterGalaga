@@ -252,7 +252,7 @@ public class PlayerBase : ShipBase
     public void ProtectiveShot()
     {
         timesCalled++;
-        if (timesCalled == 3 && protectiveCount < maxProtectiveCount)
+        if (timesCalled >= 3 && protectiveCount < maxProtectiveCount)
         {
             if (bulletPool != null)
             {

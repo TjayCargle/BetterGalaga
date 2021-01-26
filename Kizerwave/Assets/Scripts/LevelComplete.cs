@@ -16,10 +16,13 @@ public class LevelComplete : StatDisplay
         UpdateBars();
         if (playerImage != null)
         {
-
-            if (manager.playerImages.Count > manager.selectedPlayer - 1)
+            if (manager != null)
             {
-                playerImage.sprite = manager.playerImages[manager.selectedPlayer - 1];
+
+                if (manager.playerImages.Count > manager.selectedPlayer - 1 && manager.selectedPlayer >= 0)
+                {
+                    playerImage.sprite = manager.playerImages[manager.selectedPlayer - 1];
+                }
             }
         }
     }
@@ -220,9 +223,9 @@ public class LevelComplete : StatDisplay
                     }
                 }
             }
-            if (selectedUpgrade != -1)
+            if (startButton != null)
             {
-                if (startButton != null)
+                if (selectedUpgrade != -1 || (tempHealth >= 5 && tempFire >= 5 && tempSpeed >= 5))
                 {
                     startButton.SetActive(true);
                 }
