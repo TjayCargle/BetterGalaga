@@ -2920,10 +2920,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Squads:
-  - {fileID: 4773841572379523558, guid: 818c82061f8e87d479413c96cbf46fb8, type: 3}
-  - {fileID: 8382564778400006954, guid: e84e909cde138d3458d87fc33180222a, type: 3}
-  - {fileID: 3620554861971804610, guid: f6b54f568d1660b40bd815b8fc017bc2, type: 3}
-  - {fileID: 9164368279490499577, guid: c5206f8f17929a54dac92268aa5926b9, type: 3}
+  - {fileID: 4797019148811621129, guid: 07f6d64ce01f60643b6e6d2b8ef8b40a, type: 3}
+  - {fileID: 4896119722191969419, guid: dde367acf064adb468acc6b0fba0a73e, type: 3}
+  - {fileID: 6303027415601173885, guid: cbe1833613f1d174a8477ed0f9e6def6, type: 3}
+  - {fileID: 4662609681539173083, guid: a21c308270af29741af6397d04b78967, type: 3}
   - {fileID: 948265629166688360, guid: 368a6825afde7184a836b1e77ab33935, type: 3}
   aliveEnemies: []
   currentSquad: -1

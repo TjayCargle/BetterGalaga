@@ -5,12 +5,17 @@ using UnityEngine;
 public class SquadManager : MonoBehaviour
 {
     public List<SquadScript> Squads = new List<SquadScript>();
+    public List<SquadScript> BossSquads = new List<SquadScript>();
     public List<EnemyBase> aliveEnemies = new List<EnemyBase>();
     public int currentSquad = -1;
     public float delayTime = 0.5f;
     public bool isPaused = false;
     public float initialSpeed = 0;
     public float speedIncreaseAmount = 1.5f;
+    public bool endless = false;
+
+    public int waveCount = 0;
+
     private void Start()
     {
         ReleaseNextSquad();
@@ -20,7 +25,33 @@ public class SquadManager : MonoBehaviour
 
     public bool ReleaseNextSquad()
     {
+        if(endless == false)
+        {
         currentSquad++;
+
+        }
+        else
+        {
+            waveCount++;
+            if (waveCount % 5 == 0)
+            {
+                currentSquad = Random.Range(0, BossSquads.Count);
+                if (BossSquads.Count > 0)
+                {
+                    if (currentSquad < BossSquads.Count)
+                    {
+                        SquadScript someSquad = BossSquads[currentSquad];
+                        StartCoroutine(DelayedSpawn(someSquad, delayTime));
+                        return true;
+                    }
+                }
+            }
+            else
+            {
+            currentSquad = Random.Range(0, Squads.Count);
+            }
+        }
+
         if (Squads.Count > 0)
         {
             if (currentSquad < Squads.Count)

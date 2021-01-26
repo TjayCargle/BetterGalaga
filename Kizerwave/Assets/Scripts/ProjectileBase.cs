@@ -222,20 +222,24 @@ public class ProjectileBase : MonoBehaviour
     public void SpawnCluster()
     {
         angle = 360.0f;
-        for (int i = 0; i < 10; i++)
+        if (p_owner != null)
         {
-            ProjectileBase defaultProjectile = myPool.GetProjectile(p_owner, MissileType.normal);
 
-            posX = transform.position.x + Mathf.Cos(angle) * 2.0f;
-            posY = transform.position.y + Mathf.Sin(angle) * 1.0f;
-            defaultProjectile.transform.position = new Vector3(posX, posY, transform.position.z);
-            angle -= 36.0f; ;
-            transform.LookAt(transform.position);
-            transform.localEulerAngles = new Vector3(-transform.localEulerAngles.x, -transform.localEulerAngles.y, transform.localEulerAngles.z);
-            defaultProjectile.moveDirection = defaultProjectile.transform.position - transform.position;
+            for (int i = 0; i < 10; i++)
+            {
+                ProjectileBase defaultProjectile = myPool.GetProjectile(p_owner, MissileType.normal);
 
+                posX = transform.position.x + Mathf.Cos(angle) * 2.0f;
+                posY = transform.position.y + Mathf.Sin(angle) * 1.0f;
+                defaultProjectile.transform.position = new Vector3(posX, posY, transform.position.z);
+                angle -= 36.0f; ;
+                defaultProjectile.transform.LookAt(transform.position);
+                defaultProjectile.transform.localEulerAngles = new Vector3(-defaultProjectile.transform.localEulerAngles.x, -transform.localEulerAngles.y, transform.localEulerAngles.z);
+                defaultProjectile.moveDirection = defaultProjectile.transform.position - transform.position;
+
+            }
+            SFXLibrary.PlaySmallExplosion();
         }
-        SFXLibrary.PlaySmallExplosion();
     }
 
     public void BombExplosion()

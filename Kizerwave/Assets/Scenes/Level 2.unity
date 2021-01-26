@@ -7922,7 +7922,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4baf6698bde2b0f438a292a405ff01b4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 12a60d8a33dcf004c9d6c4288ba1ba24, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.322
   m_Pitch: 1
@@ -8313,12 +8313,16 @@ MonoBehaviour:
   - {fileID: 4773841572379523558, guid: fbc55d3056b05bf4dbac243e82495cd4, type: 3}
   - {fileID: 4773841572379523558, guid: 90527bcea53590441a9a0084025df006, type: 3}
   - {fileID: 4773841572379523558, guid: c6d3d0440a9d73b49a2a10f79743b121, type: 3}
+  - {fileID: 4896119722191969419, guid: dde367acf064adb468acc6b0fba0a73e, type: 3}
+  BossSquads: []
   aliveEnemies: []
   currentSquad: -1
   delayTime: 1.4
   isPaused: 0
   initialSpeed: 10
   speedIncreaseAmount: 1.5
+  endless: 0
+  waveCount: 0
 --- !u!4 &2000333848
 Transform:
   m_ObjectHideFlags: 0

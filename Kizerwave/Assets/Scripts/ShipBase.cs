@@ -11,6 +11,7 @@ namespace TJayEnums
         Cluster,
         Protective,
         Homing,
+        Shield,
         Bomb,
         Laser,
         Random

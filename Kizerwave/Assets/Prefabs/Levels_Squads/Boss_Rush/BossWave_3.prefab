@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1341503529255287711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7502251131145155098}
+  - component: {fileID: 6303027415601173885}
+  m_Layer: 0
+  m_Name: Wave_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7502251131145155098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341503529255287711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.6, y: 11.7, z: 19.823223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6303027415601173885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341503529255287711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aae3917869eddb4095805516fe01aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInSquad:
+  - {fileID: 3461647778845325346, guid: 98245aa0456ef144faf2e994d2faa6bf, type: 3}
+  - {fileID: 5211607422399899362, guid: 59f7ebf6ef5511b43aceddb2ae48345b, type: 3}
+  - {fileID: 6169874645150249764, guid: f480c623c2d258e4293c31b216d20347, type: 3}
+  - {fileID: 16398990718552049, guid: 523b0441b63e4af4bb0b58e6eb5fe1b6, type: 3}
+  - {fileID: 8539742002644721988, guid: e1d05c5d106884c4abfd79a74807d10b, type: 3}
+  - {fileID: 6156562439761821080, guid: f291484d7b0fe6044aa94e1927669b98, type: 3}
+  - {fileID: 3461647778845325346, guid: 98245aa0456ef144faf2e994d2faa6bf, type: 3}
+  - {fileID: 6169874645150249764, guid: f480c623c2d258e4293c31b216d20347, type: 3}
+  - {fileID: 16398990718552049, guid: 523b0441b63e4af4bb0b58e6eb5fe1b6, type: 3}
+  - {fileID: 8539742002644721988, guid: e1d05c5d106884c4abfd79a74807d10b, type: 3}
+  - {fileID: 6156562439761821080, guid: f291484d7b0fe6044aa94e1927669b98, type: 3}
+  - {fileID: 3461647778845325346, guid: 98245aa0456ef144faf2e994d2faa6bf, type: 3}
+  - {fileID: 6169874645150249764, guid: f480c623c2d258e4293c31b216d20347, type: 3}
+  - {fileID: 16398990718552049, guid: 523b0441b63e4af4bb0b58e6eb5fe1b6, type: 3}
+  - {fileID: 8539742002644721988, guid: e1d05c5d106884c4abfd79a74807d10b, type: 3}
+  - {fileID: 6156562439761821080, guid: f291484d7b0fe6044aa94e1927669b98, type: 3}
+  - {fileID: 3461647778845325346, guid: 98245aa0456ef144faf2e994d2faa6bf, type: 3}
+  - {fileID: 6169874645150249764, guid: f480c623c2d258e4293c31b216d20347, type: 3}
+  - {fileID: 16398990718552049, guid: 523b0441b63e4af4bb0b58e6eb5fe1b6, type: 3}
+  - {fileID: 8539742002644721988, guid: e1d05c5d106884c4abfd79a74807d10b, type: 3}
+  - {fileID: 6156562439761821080, guid: f291484d7b0fe6044aa94e1927669b98, type: 3}
+  - {fileID: 3461647778845325346, guid: 98245aa0456ef144faf2e994d2faa6bf, type: 3}
+  - {fileID: 6169874645150249764, guid: f480c623c2d258e4293c31b216d20347, type: 3}
+  - {fileID: 16398990718552049, guid: 523b0441b63e4af4bb0b58e6eb5fe1b6, type: 3}
+  - {fileID: 8539742002644721988, guid: e1d05c5d106884c4abfd79a74807d10b, type: 3}
+  - {fileID: 6156562439761821080, guid: f291484d7b0fe6044aa94e1927669b98, type: 3}
+  s_formationSpots:
+  - {x: -25, y: 25, z: 40}
+  - {x: 0, y: 5, z: 40}
+  - {x: -20, y: 25, z: 40}
+  - {x: -15, y: 25, z: 40}
+  - {x: -10, y: 25, z: 40}
+  - {x: -5, y: 25, z: 40}
+  - {x: 5, y: 25, z: 40}
+  - {x: 10, y: 25, z: 40}
+  - {x: 15, y: 25, z: 40}
+  - {x: 20, y: 25, z: 40}
+  - {x: 25, y: 25, z: 40}
+  - {x: -20, y: 10, z: 40}
+  - {x: -10, y: 10, z: 40}
+  - {x: 10, y: 10, z: 40}
+  - {x: 20, y: 10, z: 40}
+  - {x: -20, y: 0, z: 40}
+  - {x: -10, y: 0, z: 40}
+  - {x: 10, y: 0, z: 40}
+  - {x: 20, y: 0, z: 40}
+  - {x: -20, y: 8, z: 40}
+  - {x: 20, y: 8, z: 40}
+  - {x: -15, y: 6, z: 40}
+  - {x: -15, y: 6, z: 40}
+  - {x: 20, y: 4, z: 40}
+  - {x: 20, y: 4, z: 40}
+  - {x: 20, y: 2, z: 40}

@@ -19,6 +19,13 @@ public class GruntScript : EnemyBase
             myHealthBar = GetComponentInChildren<EnemyHealthBar>(true);
         }
 
+        if(myHealthBar != null)
+        {
+            myHealthBar.enemyHealth.maxValue = s_health;
+            myHealthBar.enemyHealth.value = s_health;
+            myHealthBar.targetEnemy = this;
+        }
+
     }
    public float idleRotRadius = 10.0f;
    public float idleRotSpeed = 3.5f;

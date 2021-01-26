@@ -16,58 +16,65 @@ public class PoolManager : MonoBehaviour
     private ProjectileBase CreateProjectile(ShipBase fireingShip, MissileType missileType)
     {
         ProjectileBase returnedProjectile = null;
-        switch (missileType)
+        if (fireingShip != null)
         {
-            case MissileType.normal:
-                {
-                    returnedProjectile = Instantiate(spawnedProjectile, fireingShip.transform.position, Quaternion.identity);
-                    returnedProjectile.missleType = MissileType.normal;
-                }
-                break;
-            case MissileType.Spread:
-                {
-                    returnedProjectile = Instantiate(spawnedSpread, fireingShip.transform.position, Quaternion.identity);
-                    returnedProjectile.missleType = MissileType.Spread;
-                }
-                break;
-            case MissileType.Cluster:
-                {
-                    returnedProjectile = Instantiate(spawnedCluster, fireingShip.transform.position, Quaternion.identity);
-                    returnedProjectile.missleType = MissileType.Cluster;
-                }
-                break;
-            case MissileType.Protective:
-                {
-                    returnedProjectile = Instantiate(spawnedProtective, fireingShip.transform.position, Quaternion.identity);
-                    returnedProjectile.missleType = MissileType.Protective;
-                }
-                break;
-            case MissileType.Homing:
-                {
-                    returnedProjectile = Instantiate(spawnedHoming, fireingShip.transform.position, Quaternion.identity);
-                    returnedProjectile.missleType = MissileType.Homing;
-                }
-                break;
-            case MissileType.Laser:
-                {
-                    returnedProjectile = Instantiate(spawnedLaser, fireingShip.transform.position, Quaternion.identity);
-                    returnedProjectile.missleType = MissileType.Laser;
-                }
-                break;
-            default:
-                {
-                    returnedProjectile = Instantiate(spawnedBomb, fireingShip.transform.position, Quaternion.identity);
-                    returnedProjectile.missleType = MissileType.Bomb;
-                }
-                break;
-        }
 
+            switch (missileType)
+            {
+                case MissileType.normal:
+                    {
+                        returnedProjectile = Instantiate(spawnedProjectile, fireingShip.transform.position, Quaternion.identity);
+                        returnedProjectile.missleType = MissileType.normal;
+                    }
+                    break;
+                case MissileType.Spread:
+                    {
+                        returnedProjectile = Instantiate(spawnedSpread, fireingShip.transform.position, Quaternion.identity);
+                        returnedProjectile.missleType = MissileType.Spread;
+                    }
+                    break;
+                case MissileType.Cluster:
+                    {
+                        returnedProjectile = Instantiate(spawnedCluster, fireingShip.transform.position, Quaternion.identity);
+                        returnedProjectile.missleType = MissileType.Cluster;
+                    }
+                    break;
+                case MissileType.Protective:
+                    {
+                        returnedProjectile = Instantiate(spawnedProtective, fireingShip.transform.position, Quaternion.identity);
+                        returnedProjectile.missleType = MissileType.Protective;
+                    }
+                    break;
+                case MissileType.Homing:
+                    {
+                        returnedProjectile = Instantiate(spawnedHoming, fireingShip.transform.position, Quaternion.identity);
+                        returnedProjectile.missleType = MissileType.Homing;
+                    }
+                    break;
+                case MissileType.Laser:
+                    {
+                        returnedProjectile = Instantiate(spawnedLaser, fireingShip.transform.position, Quaternion.identity);
+                        returnedProjectile.missleType = MissileType.Laser;
+                    }
+                    break;
+                default:
+                    {
+                        returnedProjectile = Instantiate(spawnedBomb, fireingShip.transform.position, Quaternion.identity);
+                        returnedProjectile.missleType = MissileType.Bomb;
+                    }
+                    break;
+            }
+
+        }
         return returnedProjectile;
     }
 
     public ProjectileBase GetProjectile(ShipBase fireingShip, MissileType missileType)
     {
-
+        if (fireingShip == null)
+        {
+            return null;
+        }
 
         ProjectileBase returnedProjectile = null;
         if (inactiveProjectiles.Count > 0)
@@ -75,7 +82,7 @@ public class PoolManager : MonoBehaviour
             bool found = false;
             for (int i = 0; i < inactiveProjectiles.Count; i++)
             {
-                if(inactiveProjectiles[i].missleType == missileType)
+                if (inactiveProjectiles[i].missleType == missileType)
                 {
                     found = true;
                     returnedProjectile = inactiveProjectiles[i];
@@ -83,12 +90,12 @@ public class PoolManager : MonoBehaviour
                     break;
                 }
             }
-            if(found == false)
+            if (found == false)
             {
                 returnedProjectile = CreateProjectile(fireingShip, missileType);
 
             }
-          
+
         }
         else
         {
@@ -102,7 +109,7 @@ public class PoolManager : MonoBehaviour
             returnedProjectile.transform.position = fireingShip.transform.position;
             returnedProjectile.myPool = this;
             returnedProjectile.p_owner = fireingShip;
-           // returnedProjectile.missleType = TJayEnums.MissileType.normal;
+            // returnedProjectile.missleType = TJayEnums.MissileType.normal;
             returnedProjectile.p_currentSpeed = returnedProjectile.p_defaultSpeed + fireingShip.SPEED;
             returnedProjectile.moveDirection = fireingShip.FIRE_DIRECTION;
             returnedProjectile.p_lifespan = returnedProjectile.p_maxLifespan;

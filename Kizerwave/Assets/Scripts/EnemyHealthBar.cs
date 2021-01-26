@@ -18,7 +18,11 @@ public class EnemyHealthBar : MonoBehaviour
                 sliderFill.color = Color.Lerp(Color.red, Color.green, enemyHealth.value / enemyHealth.maxValue);
 
             if (stayOn == false)
+            {
+
+                transform.LookAt(Camera.main.transform);
                 StartCoroutine(TurnOff(displayTime));
+            }
         }
     }
 

@@ -5337,7 +5337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8355617, y: 0}
   m_AnchorMax: {x: 1, y: 0.13477921}
-  m_AnchoredPosition: {x: -18.885742, y: 2.5499878}
+  m_AnchoredPosition: {x: -18.885742, y: 2.5499268}
   m_SizeDelta: {x: -1.1729584, y: 5.104744}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1077035554
@@ -6778,12 +6778,16 @@ MonoBehaviour:
   - {fileID: 2147925650345240266, guid: 793b2981be0a05649874e87f75bb96ac, type: 3}
   - {fileID: 7772985899266540390, guid: 7fb265ff71d459645b4f2b5754065593, type: 3}
   - {fileID: 2073356844695390246, guid: da77e570bc065524aa0e2d78cfed3eb0, type: 3}
+  - {fileID: 4662609681539173083, guid: a21c308270af29741af6397d04b78967, type: 3}
+  BossSquads: []
   aliveEnemies: []
   currentSquad: -1
   delayTime: 1
   isPaused: 0
   initialSpeed: 10
   speedIncreaseAmount: 1.5
+  endless: 0
+  waveCount: 0
 --- !u!4 &1605992886
 Transform:
   m_ObjectHideFlags: 0
@@ -6825,7 +6829,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4baf6698bde2b0f438a292a405ff01b4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6e522591120952e428d339177a9989a4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.322
   m_Pitch: 1
