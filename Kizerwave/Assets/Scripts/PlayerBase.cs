@@ -100,7 +100,7 @@ public class PlayerBase : ShipBase
     public int LIVES
     {
         get { return s_lives; }
-        set { s_lives = value; UpdateHUD(); }
+        set { if (value < s_lives) { s_health = MaxHealth; }  s_lives = value; UpdateHUD(); }
     }
  
     private void UpdateHUD()
@@ -163,6 +163,7 @@ public class PlayerBase : ShipBase
                     {
                         LaserSpecial(Vector3.up * 8);
                         amount++;
+                        SFXLibrary.PlayFireLaser();
                     }
                  if(amount >= length)
                     {

@@ -357,7 +357,7 @@ public class ProjectileBase : MonoBehaviour
                             if (thePlayer.LIVES > 1)
                             {
                                 thePlayer.LIVES--;
-                                thePlayer.HEALTH = 5;
+                               
                             }
                             else
                             {

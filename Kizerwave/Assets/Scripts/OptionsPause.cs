@@ -63,35 +63,70 @@ public class OptionsPause : MonoBehaviour
     public static void LoadNextScene()
     {
         string currentScene = SceneManager.GetActiveScene().name;
-
+        StatManager stat = StatManager.Instance;
         switch(currentScene)
         {
             case "Level 1":
                 {
+                    if(stat)
+                    {
+                        if(!stat.completedLevels.Contains("Level 1"))
+                        {
+                            stat.completedLevels.Add("Level 1");
+                        }
+                    }
                     SceneManager.LoadScene("TJayTestScene");
                 }
                 break;
 
             case "Level 2":
                 {
+                    if (stat)
+                    {
+                        if (!stat.completedLevels.Contains("Level 2"))
+                        {
+                            stat.completedLevels.Add("Level 2");
+                        }
+                    }
                     SceneManager.LoadScene("Level 3");
                 }
                 break;
 
             case "Level 3":
                 {
-                     SceneManager.LoadScene("Level 5");
+                    if (stat)
+                    {
+                        if (!stat.completedLevels.Contains("Level 3"))
+                        {
+                            stat.completedLevels.Add("Level 3");
+                        }
+                    }
+                    SceneManager.LoadScene("Level 5");
                 }
                 break;
 
             case "Level 5":
                 {
+                    if (stat)
+                    {
+                        if (!stat.completedLevels.Contains("Level 5"))
+                        {
+                            stat.completedLevels.Add("Level 5");
+                        }
+                    }
                     SceneManager.LoadScene("MainMenu");
                 }
                 break;
 
             case "TJayTestScene":
                 {
+                    if (stat)
+                    {
+                        if (!stat.completedLevels.Contains("TJayTestScene"))
+                        {
+                            stat.completedLevels.Add("TJayTestScene");
+                        }
+                    }
                     SceneManager.LoadScene("Level 2");
                 }
                 break;

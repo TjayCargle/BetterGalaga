@@ -272,4 +272,27 @@ public class SFXLibrary : MonoBehaviour
             }
         }
     }
+
+    public static void PlayFireLaser(bool wait = false)
+    {
+        if (realSFX != null)
+        {
+            if (realClips.Count > 0)
+            {
+                if (wait == true)
+                {
+                    if (!realSFX.isPlaying)
+                    {
+                        realSFX.clip = realClips[11];
+                        realSFX.Play();
+                    }
+                }
+                else
+                {
+                    realSFX.clip = realClips[11];
+                    realSFX.Play();
+                }
+            }
+        }
+    }
 }
