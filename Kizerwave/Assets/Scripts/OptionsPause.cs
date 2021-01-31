@@ -52,11 +52,13 @@ public class OptionsPause : MonoBehaviour
 
     public void LoadPlayScene()
     {
+        ScoreScript.playerScore = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public static void LoadMainMenu()
     {
+        ScoreScript.playerScore = 0;
         SceneManager.LoadScene("MainMenu");
     }
 

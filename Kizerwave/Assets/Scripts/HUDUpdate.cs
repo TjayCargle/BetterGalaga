@@ -43,6 +43,12 @@ public class HUDUpdate : MonoBehaviour
                 rect.position = new Vector3((rect.position.x + (50 * (float)stats.healthStat * 0.5f)), rect.position.y, rect.position.z);
             }
         }
+
+        string activeScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        if(activeScene != "Endless")
+        {
+            playerScore.gameObject.SetActive(false);
+        }
     }
 
     public void ValidateChanges()

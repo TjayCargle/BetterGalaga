@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject PauseMenu = null;
     public GameObject GameOverMenu = null;
     public GameObject levelCompleteMenu = null;
+    public Text yourScore = null;
+    public Text highScore = null;
+    public static string HIGHSCORE = "High_Score";
     private bool paused = false;
     public void PauseGame()
     {
@@ -79,6 +83,31 @@ public class GameManager : MonoBehaviour
             PauseGame();
             ClosePanel(PauseMenu);
             OpenPanel(GameOverMenu);
+
+            if(yourScore != null && highScore != null)
+            {
+                    yourScore.text = "Your score: " + ScoreScript.playerScore;
+                if(PlayerPrefs.HasKey(HIGHSCORE))
+                {
+                    int lastHigh = PlayerPrefs.GetInt(HIGHSCORE);
+                    if(ScoreScript.playerScore > lastHigh)
+                    {
+                        highScore.text = "NEW High Score: " + ScoreScript.playerScore;
+                        PlayerPrefs.SetInt(HIGHSCORE, ScoreScript.playerScore);
+                    }
+                    else
+                    {
+                        highScore.text = "High Score: " + lastHigh;
+
+                    }
+
+                }
+                else
+                {
+                    highScore.text = "NEW High Score: " + ScoreScript.playerScore;
+                    PlayerPrefs.SetInt(HIGHSCORE, ScoreScript.playerScore);
+                }
+            }
 
         }
     }
