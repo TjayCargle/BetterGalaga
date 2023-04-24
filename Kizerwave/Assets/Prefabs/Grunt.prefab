@@ -317,6 +317,7 @@ MonoBehaviour:
   fireDelay: 5
   protectiveCount: 0
   maxProtectiveCount: 10
+  timesCalled: 0
   powerupDrop: 7
   dropChance: 25
   s_waypoints:
@@ -344,6 +345,7 @@ MonoBehaviour:
   squadManager: {fileID: 0}
   formationLocation: {x: 0, y: 0, z: 0}
   shotType: 1
+  specialIncreaseVal: 4
   myHealthBar: {fileID: 717546878066372706}
   lockXRotation: 1
   lockYRotation: 0
@@ -361,7 +363,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0584308, y: 0.55274284, z: 0.9670086}
+  m_Size: {x: 0.96, y: 0.48, z: 0.82}
   m_Center: {x: -0.017845333, y: 0.008335784, z: -0.024794042}
 --- !u!54 &4370762239920621097
 Rigidbody:

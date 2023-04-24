@@ -139,6 +139,8 @@ public class OptionsPause : MonoBehaviour
                 }
                 break;
         }
+
+        stat.SaveLevels();
     }
 
     public void OpenPanel(GameObject somePanel)

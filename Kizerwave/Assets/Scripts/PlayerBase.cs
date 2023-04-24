@@ -230,12 +230,12 @@ public class PlayerBase : ShipBase
             ProjectileBase secondProjectile = bulletPool.GetProjectile(this, MissileType.Spread);
             secondProjectile.p_initialRotation = new Vector3(-45, 45, 0);
             secondProjectile.moveDirection = new Vector3(1, 1, 0);
-            secondProjectile.transform.localEulerAngles = new Vector3(-45, 45, defaultProjectile.transform.localEulerAngles.z);
+            secondProjectile.transform.localEulerAngles = new Vector3(-45, 115, defaultProjectile.transform.localEulerAngles.z);
 
             ProjectileBase thirdProjectile = bulletPool.GetProjectile(this, MissileType.Spread);
             thirdProjectile.p_initialRotation = new Vector3(-45, -45, 0);
             thirdProjectile.moveDirection = new Vector3(-1, 1, 0);
-            thirdProjectile.transform.localEulerAngles = new Vector3(-45, -45, defaultProjectile.transform.localEulerAngles.z);
+            thirdProjectile.transform.localEulerAngles = new Vector3(-45, -115, defaultProjectile.transform.localEulerAngles.z);
             SFXLibrary.PlaySpreadMissile();
         }
     }

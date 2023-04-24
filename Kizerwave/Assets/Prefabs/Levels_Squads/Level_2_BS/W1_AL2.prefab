@@ -530,6 +530,7 @@ MonoBehaviour:
   fireDelay: 5
   protectiveCount: 0
   maxProtectiveCount: 10
+  timesCalled: 0
   powerupDrop: 7
   dropChance: 25
   s_waypoints:
@@ -547,10 +548,11 @@ MonoBehaviour:
   endInFormation: 0
   fireAtWaypoints: 0
   fireAtIntervals: 1
-  fireIntervals: 2.5
+  fireIntervals: 8
   squadManager: {fileID: 0}
   formationLocation: {x: 0, y: 0, z: 0}
-  shotType: 0
+  shotType: 4
+  specialIncreaseVal: 4
   myHealthBar: {fileID: 5771628649432955216}
   lockXRotation: 1
   lockYRotation: 1

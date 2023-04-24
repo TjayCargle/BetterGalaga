@@ -66,6 +66,8 @@ public class PoolManager : MonoBehaviour
             }
 
         }
+        returnedProjectile.UpdateColor();
+
         return returnedProjectile;
     }
 
@@ -120,6 +122,7 @@ public class PoolManager : MonoBehaviour
         {
             Debug.Log("Could not find projectile");
         }
+        returnedProjectile.UpdateColor();
         return returnedProjectile;
     }
 

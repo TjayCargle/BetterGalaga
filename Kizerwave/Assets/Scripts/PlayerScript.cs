@@ -13,12 +13,14 @@ public class PlayerScript : PlayerBase
     //[SerializeField] private float health;
     //[SerializeField] private float damage;
     //[SerializeField] private float gravityScale;
- 
+
 
     public bool playerIsAlive;
     public bool playerIsPlayable;
     private Vector3 moveDirection = Vector3.zero;
-
+    private bool isImmune = false;
+    private float immunityTime = 12.5f;
+    private float immunityRemaining = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,17 @@ public class PlayerScript : PlayerBase
         SPECIAL = 0;
     }
 
+
+    public override void TakeDamage(int dmgVal)
+    {
+        if (isImmune == false)
+        {
+            base.TakeDamage(dmgVal);
+            isImmune = true;
+            immunityRemaining = immunityTime;
+        }
+        
+    }
     private void Awake()
     {
 
@@ -40,49 +53,47 @@ public class PlayerScript : PlayerBase
         }
         StatManager stats = GameObject.FindObjectOfType<StatManager>();
 
-        if(stats != null)
+        if (stats != null)
         {
-            if(stats.selectedMesh != null)
+            if (stats.selectedMesh != null)
             {
-            MeshFilter myMesh = gameObject.GetComponentInChildren<MeshFilter>();
+                MeshFilter myMesh = gameObject.GetComponentInChildren<MeshFilter>();
                 myMesh.mesh = stats.selectedMesh;
                 myMesh.transform.localScale = new Vector3(stats.meshScale, stats.meshScale, stats.meshScale);
             }
 
-            if(stats.selectedMaterial != null)
+            if (stats.selectedMaterial != null)
             {
                 MeshRenderer myMaterial = gameObject.GetComponentInChildren<MeshRenderer>();
                 myMaterial.material = stats.selectedMaterial;
             }
 
-            fireDelay = 1.2f - ((float)stats.fireRateStat * 0.2f);
+            fireDelay = 1.2f - ((float)stats.fireRateStat * 0.2255f);
             SPEED = 15 + (5 * stats.speedStat);
             BoxCollider myCollider = GetComponentInChildren<BoxCollider>();
-           if(myCollider != null)
+            if (myCollider != null)
             {
-                myCollider.size = new Vector3((1.0f - (0.15f * (float)stats.speedStat)), 1.0f - (0.15f * (float)stats.speedStat), 1.0f - (0.15f * (float)stats.speedStat)); 
+                myCollider.size = new Vector3((1.0f - (0.15f * (float)stats.speedStat)), 1.0f - (0.15f * (float)stats.speedStat), 1.0f - (0.15f * (float)stats.speedStat));
             }
 
-            MaxHealth = 5 * stats.healthStat;  
+            MaxHealth = 5 * stats.healthStat;
             MaxShield = 3 * stats.healthStat;
 
             s_health = MaxHealth;
             s_shield = MaxShield;
-           if (playerHUD != null)
+            if (playerHUD != null)
             {
                 playerHUD.playerHealthBar.maxValue = MaxHealth;
                 playerHUD.playerHealthBar.value = MaxHealth;
                 playerHUD.playerShieldBar.maxValue = MaxShield;
                 playerHUD.playerShieldBar.value = MaxShield;
             }
-        
+
         }
         else
         {
             SPEED = 20;
-
         }
-
     }
 
 
@@ -134,6 +145,16 @@ public class PlayerScript : PlayerBase
                     transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDirection * Time.deltaTime, SPEED * Time.fixedDeltaTime);
             }
 
+            if(isImmune)
+            {
+                immunityRemaining -= Time.fixedDeltaTime;
+                if(immunityRemaining <= 0)
+                {
+                   isImmune = false;
+                }
+            }
+
+
             if (canFire == false)
             {
 
@@ -162,13 +183,11 @@ public class PlayerScript : PlayerBase
                 normalWeapon = WEAPON;
                 WEAPON = PICKUP;
                 PICKUP = normalWeapon;
-
             }
 
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Bomb();
-
             }
 
             if (Input.GetKeyDown(KeyCode.R))
@@ -179,9 +198,7 @@ public class PlayerScript : PlayerBase
                     LaserSpecial();
                     SPECIAL = 0;
                     playerHUD.ValidateChanges();
-
                 }
-
             }
         }
     }

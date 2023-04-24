@@ -32,9 +32,9 @@ public class StatManager : MonoBehaviour
     #endregion
 
 
-    public int healthStat =1;
-    public int fireRateStat =1;
-    public int speedStat =1 ;
+    public int healthStat = 1;
+    public int fireRateStat = 1;
+    public int speedStat = 1;
     public int selectedPlayer = -1;
     public string playerName = "";
     public int meshScale;
@@ -46,23 +46,51 @@ public class StatManager : MonoBehaviour
     public PlayerSelect playerSelect = null;
     public List<Sprite> playerImages = new List<Sprite>();
     public List<string> completedLevels = new List<string>();
+    private string completedKey = "completedLevels";
+    private bool isSetup = false;
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this);
-        SceneManager.activeSceneChanged += LevelLoaded;
+        Setup();
+    }
 
+    public void Setup()
+    {
+        if(!isSetup)
+        {
+            DontDestroyOnLoad(this);
+            SceneManager.activeSceneChanged += LevelLoaded;
+            string completedLevelsList = PlayerPrefs.GetString(completedKey);
+            string[] levels = completedLevelsList.Split(',');
+            foreach (string level in levels)
+            {
+                if (!string.IsNullOrEmpty(level))
+                {
+                    completedLevels.Add(level);
+                }
+            }
+            isSetup = true;
+        }
     }
 
     private void LevelLoaded(Scene arg0, Scene arg1)
     {
         playerSelect = GameObject.FindObjectOfType<PlayerSelect>(true);
+    }
 
+    public void SaveLevels()
+    {
+        string x = string.Empty;
+        foreach (var item in completedLevels)
+        {
+            x += item + ",";
+        }
+        PlayerPrefs.SetString(completedKey, x);
     }
 
     private void Awake()
     {
-
+        Setup();
         playerSelect = GameObject.FindObjectOfType<PlayerSelect>(true);
         if (_instance != null && _instance != this)
             Destroy(this.gameObject);

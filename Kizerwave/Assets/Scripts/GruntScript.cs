@@ -29,7 +29,7 @@ public class GruntScript : EnemyBase
     }
    public float idleRotRadius = 10.0f;
    public float idleRotSpeed = 3.5f;
-    float posX, posY, angle = 0.0f;
+   float posX, posY, angle = 0.0f;
 
     void FixedUpdate()
     {

@@ -6,6 +6,7 @@ public class ProjectileBase : MonoBehaviour
 {
     public PoolManager myPool = null;
     public GameObject Explosion;
+    public GameObject Explosion2;
 
     [SerializeField]
     protected bool isPaused = false;
@@ -23,15 +24,38 @@ public class ProjectileBase : MonoBehaviour
     public MissileType missleType;
 
     private ShipBase neareastEnemy = null;
-
+    private ColorChanger colorChanger = null;
     private void Start()
     {
         transform.localEulerAngles = p_initialRotation;
+
     }
 
     private void Awake()
     {
         transform.localEulerAngles = p_initialRotation;
+    }
+
+    public void UpdateColor()
+    {
+        if (colorChanger == null)
+        {
+            colorChanger = GetComponentInChildren<ColorChanger>();
+        }
+        if (colorChanger != null)
+        {
+            if (p_owner != null)
+            {
+                if (p_owner is PlayerScript)
+                {
+                    colorChanger.SetColor(new Color(0, 1, 1, 0.75f));
+                }
+                else
+                {
+                    colorChanger.SetColor(new Color(1, 0, 0, 0.75f));
+                }
+            }
+        }
     }
 
     public void Despawn()
@@ -52,7 +76,7 @@ public class ProjectileBase : MonoBehaviour
 
                 if (sqrDist < 25)
                 {
-                    someEnemy.HEALTH -= 3;
+                    someEnemy.TakeDamage(3);
 
                     if (someEnemy.HEALTH <= 0)
                     {
@@ -84,6 +108,11 @@ public class ProjectileBase : MonoBehaviour
                             }
                         }
 
+                        if (Explosion2)
+                        {
+                            Instantiate(Explosion2, someEnemy.transform.position, someEnemy.transform.rotation);
+                        }
+
                         Destroy(someEnemy.gameObject);
                     }
 
@@ -91,6 +120,10 @@ public class ProjectileBase : MonoBehaviour
             }
 
             BombExplosion();
+        }
+        if (Explosion)
+        {
+            Instantiate(Explosion, transform.position, transform.rotation);
         }
         if (myPool != null)
         {
@@ -303,7 +336,7 @@ public class ProjectileBase : MonoBehaviour
                     SFXLibrary.PlayPlayerHit();
 
                 }
-                someShip.HEALTH -= 1;
+                someShip.TakeDamage(1);
                 if (someShip.HEALTH <= 0)
                 {
 
@@ -344,7 +377,10 @@ public class ProjectileBase : MonoBehaviour
                                 }
                             }
                             SFXLibrary.PlayMediumExplosion();
-
+                            if (Explosion2)
+                            {
+                                Instantiate(Explosion2, anEnemy.transform.position, anEnemy.transform.rotation);
+                            }
                             Destroy(anEnemy.gameObject);
                         }
                     }
@@ -357,7 +393,7 @@ public class ProjectileBase : MonoBehaviour
                             if (thePlayer.LIVES > 1)
                             {
                                 thePlayer.LIVES--;
-                               
+
                             }
                             else
                             {
@@ -375,6 +411,10 @@ public class ProjectileBase : MonoBehaviour
                     {
                         OptionsPause.LoadMainMenu();
                     }
+                }
+                else
+                {
+                    someShip.transform.position += (someShip.transform.position - transform.position) * 50 * Time.fixedDeltaTime;
                 }
                 if (missleType != MissileType.Laser)
                     Despawn();

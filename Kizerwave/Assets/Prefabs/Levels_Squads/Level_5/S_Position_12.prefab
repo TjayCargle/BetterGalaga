@@ -107,6 +107,7 @@ MonoBehaviour:
   fireDelay: 5
   protectiveCount: 0
   maxProtectiveCount: 10
+  timesCalled: 0
   powerupDrop: 7
   dropChance: 25
   s_waypoints:
@@ -144,7 +145,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.575497, y: 3.303449, z: 3.9624033}
+  m_Size: {x: 1.29, y: 1.21, z: 0.43}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8961627684306759218
 Rigidbody:
